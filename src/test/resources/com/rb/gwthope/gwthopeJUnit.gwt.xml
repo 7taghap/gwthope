@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.rb.gwthope.gwthope' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/gwthope/greet" class="com.rb.gwthope.server.GreetingServiceImpl" />
+
+</module>

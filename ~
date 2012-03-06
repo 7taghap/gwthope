@@ -1,0 +1,38 @@
+start git revision
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   .gitignore
+#	new file:   gwthopeTest-dev.launch
+#	new file:   gwthopeTest-prod.launch
+#	new file:   pom.xml
+#	new file:   src/main/java/com/rb/gwthope/client/GreetingService.java
+#	new file:   src/main/java/com/rb/gwthope/client/Messages.java
+#	new file:   src/main/java/com/rb/gwthope/client/gwthope.java
+#	new file:   src/main/java/com/rb/gwthope/server/GreetingServiceImpl.java
+#	new file:   src/main/java/com/rb/gwthope/server/dao/JpaDAO.java
+#	new file:   src/main/java/com/rb/gwthope/server/dao/ProductDAO.java
+#	new file:   src/main/java/com/rb/gwthope/server/dao/UserDAO.java
+#	new file:   src/main/java/com/rb/gwthope/server/services/ProductServiceImpl.java
+#	new file:   src/main/java/com/rb/gwthope/server/services/UserServiceImpl.java
+#	new file:   src/main/java/com/rb/gwthope/shared/FieldVerifier.java
+#	new file:   src/main/java/com/rb/gwthope/shared/dto/User.java
+#	new file:   src/main/java/com/rb/gwthope/shared/services/ProductService.java
+#	new file:   src/main/java/com/rb/gwthope/shared/services/UserService.java
+#	new file:   src/main/resources/META-INF/persistence.xml
+#	new file:   src/main/resources/com/rb/gwthope/client/Messages.properties
+#	new file:   src/main/resources/com/rb/gwthope/client/Messages_fr.properties
+#	new file:   src/main/resources/com/rb/gwthope/gwthope.gwt.xml
+#	new file:   src/main/webapp/WEB-INF/applicationContext.xml
+#	new file:   src/main/webapp/WEB-INF/web.xml
+#	new file:   src/main/webapp/gwthope.css
+#	new file:   src/main/webapp/gwthope.html
+#	new file:   src/test/java/com/rb/gwthope/client/GwtTestgwthope.java
+#	new file:   src/test/resources/com/rb/gwthope/gwthopeJUnit.gwt.xml
+#

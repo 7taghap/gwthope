@@ -45,7 +45,7 @@ public class GwtTestgwthope extends GWTTestCase {
     // Create the service that we will test.
     GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
     ServiceDefTarget target = (ServiceDefTarget) greetingService;
-    target.setServiceEntryPoint(GWT.getModuleBaseURL() + "gwthope/greet");
+    target.setServiceEntryPoint(GWT.getModuleBaseURL() + "gwthope/greetService");
 
     // Since RPC calls are asynchronous, we will need to wait for a response
     // after this test method returns. This line tells the test runner to wait

@@ -11,12 +11,15 @@ import java.util.Date;
  */
 @Entity
 @Table(name="users")
+@NamedQueries({
+	@NamedQuery(name="User.findById", query="select o from User o where o.userId=:userId")
+})
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="user_id")
-	private short userId;
+	private Long userId;
 
 	@Column(name="created_by")
 	private String createdBy;
@@ -37,7 +40,7 @@ public class User implements Serializable {
 
 	private String password;
 
-	private short status;
+	private Integer status;
 
     @Temporal( TemporalType.TIMESTAMP)
 	@Column(name="update_date")
@@ -48,11 +51,11 @@ public class User implements Serializable {
     public User() {
     }
 
-	public short getUserId() {
+	public Long getUserId() {
 		return this.userId;
 	}
 
-	public void setUserId(short userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -104,11 +107,11 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public short getStatus() {
+	public Integer getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(short status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

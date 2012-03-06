@@ -1,6 +1,9 @@
 package com.rb.gwthope.client;
 
 import com.rb.gwthope.shared.FieldVerifier;
+import com.rb.gwthope.shared.dto.User;
+import com.rb.gwthope.shared.services.UserService;
+import com.rb.gwthope.shared.services.UserServiceAsync;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -33,6 +36,12 @@ public class gwthope implements EntryPoint {
    * Create a remote service proxy to talk to the server-side Greeting service.
    */
   private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+  
+  /**
+   * Creeate a remote service proxy for User
+   * 
+   */
+  private final UserServiceAsync userService = GWT.create(UserService.class);
 
   private final Messages messages = GWT.create(Messages.class);
 
@@ -111,33 +120,50 @@ public class gwthope implements EntryPoint {
         // First, we validate the input.
         errorLabel.setText("");
         String textToServer = nameField.getText();
-        if (!FieldVerifier.isValidName(textToServer)) {
-          errorLabel.setText("Please enter at least four characters");
-          return;
-        }
+//        if (!FieldVerifier.isValidName(textToServer)) {
+//          errorLabel.setText("Please enter at least four characters");
+//          return;
+//        }
 
         // Then, we send the input to the server.
         sendButton.setEnabled(false);
         textToServerLabel.setText(textToServer);
         serverResponseLabel.setText("");
-        greetingService.greetServer(textToServer, new AsyncCallback<String>() {
-          public void onFailure(Throwable caught) {
-            // Show the RPC error message to the user
-            dialogBox.setText("Remote Procedure Call - Failure");
-            serverResponseLabel.addStyleName("serverResponseLabelError");
-            serverResponseLabel.setHTML(SERVER_ERROR);
-            dialogBox.center();
-            closeButton.setFocus(true);
-          }
-
-          public void onSuccess(String result) {
-            dialogBox.setText("Remote Procedure Call");
-            serverResponseLabel.removeStyleName("serverResponseLabelError");
-            serverResponseLabel.setHTML(result);
-            dialogBox.center();
-            closeButton.setFocus(true);
-          }
-        });
+//        greetingService.greetServer(textToServer, new AsyncCallback<String>() {
+//          public void onFailure(Throwable caught) {
+//            // Show the RPC error message to the user
+//            dialogBox.setText("Remote Procedure Call - Failure");
+//            serverResponseLabel.addStyleName("serverResponseLabelError");
+//            serverResponseLabel.setHTML(SERVER_ERROR);
+//            dialogBox.center();
+//            closeButton.setFocus(true);
+//          }
+//
+//          public void onSuccess(String result) {
+//            dialogBox.setText("Remote Procedure Call");
+//            serverResponseLabel.removeStyleName("serverResponseLabelError");
+//            serverResponseLabel.setHTML(result);
+//            dialogBox.center();
+//            closeButton.setFocus(true);
+//          }
+//        });
+        userService.findUser(Long.parseLong(textToServer), new AsyncCallback<String>() {
+        	public void onFailure(Throwable caught) {
+              // Show the RPC error message to the user
+              dialogBox.setText("Remote Procedure Call - Failure");
+              serverResponseLabel.addStyleName("serverResponseLabelError");
+              serverResponseLabel.setHTML(SERVER_ERROR);
+              dialogBox.center();
+              closeButton.setFocus(true);
+        	}
+        	public void onSuccess(String user) {
+              dialogBox.setText("Remote Procedure Call");
+              serverResponseLabel.removeStyleName("serverResponseLabelError");
+              serverResponseLabel.setHTML(user);
+              dialogBox.center();
+              closeButton.setFocus(true);
+        	}
+		});
       }
     }
 

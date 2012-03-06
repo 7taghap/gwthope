@@ -4,10 +4,7 @@
     "http://java.sun.com/dtd/web-app_2_3.dtd">
 
 <web-app>
-<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml</param-value>
-	</context-param>
+
 	<listener>
 		<listener-class>
 			org.springframework.web.context.ContextLoaderListener
@@ -29,19 +26,19 @@
   
   <!-- using spring4gwt servlet -->
   <servlet>
-		<servlet-name>springGwtRemoteServiceServlet</servlet-name>
+		<servlet-name>greetServlet</servlet-name>
 		<servlet-class>org.spring4gwt.server.SpringGwtRemoteServiceServlet
 	</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>springGwtRemoteServiceServlet</servlet-name>
+		<servlet-name>greetServlet</servlet-name>
 		<url-pattern>/gwthope/springGwtServices/*</url-pattern>
 	</servlet-mapping>
   
 
   <!-- Default page to serve -->
-  <welcome-file-list>
+  <welcome-file-list>	
     <welcome-file>gwthope.html</welcome-file>
   </welcome-file-list>
 

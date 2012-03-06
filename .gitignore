@@ -1,4 +1,7 @@
 .project
 .settings
 .classpath
+.zip
+.rar
+.jar
 /target/

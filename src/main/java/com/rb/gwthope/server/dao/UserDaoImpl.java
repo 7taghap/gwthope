@@ -4,22 +4,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.rb.gwthope.shared.dto.User;
 
 
 @Repository
-public class UserDaoImpl extends AbstractJpaDao<User> implements UserDao{
+public class UserDaoImpl extends AbstractJpaDao<Integer,User> implements UserDao{
 	 private static Logger logger = Logger.getLogger(UserDaoImpl.class.getName());
 //	@Autowired
 //	EntityManagerFactory entityManagerFactory;
@@ -34,7 +25,7 @@ public class UserDaoImpl extends AbstractJpaDao<User> implements UserDao{
 		 setClazz(User.class);
 	 }
 
-	public User findById(Long userId) {
+	public User findById(int userId) {
 		try {
 //			em = entityManagerFactory.createEntityManager();
 			logger.info("entity manager :" + entityManager);

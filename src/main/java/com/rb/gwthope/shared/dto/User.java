@@ -2,6 +2,9 @@ package com.rb.gwthope.shared.dto;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Date;
 
 
@@ -18,8 +21,9 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	 @GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="user_id")
-	private Long userId;
+	private int userId;
 
 	@Column(name="created_by")
 	private String createdBy;
@@ -51,11 +55,11 @@ public class User implements Serializable {
     public User() {
     }
 
-	public Long getUserId() {
+	public int getUserId() {
 		return this.userId;
 	}
 
-	public void setUserId(Long userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 

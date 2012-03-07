@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService{
 //	public void destroy() {
 //	}
 
-	public String findUser(Long userId) {
+	public String findUser(Integer userId) {
 //		User user = new User();
 //		user.setFullname("test no persistence data");
 //		user.setUserId(1l);

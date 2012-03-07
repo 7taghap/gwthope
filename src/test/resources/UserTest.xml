@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <tag id="1" name="Apple" />
+    <tag id="2" name="Dog" />
+    <tag id="3" name="Horse" />
+</dataset>

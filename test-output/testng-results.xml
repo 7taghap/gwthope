@@ -4,77 +4,31 @@
   <suite name="gwthope">
     <groups>
     </groups>
-    <test name="com.rb.gwthope.server.dao.UserDAOTest">
-      <class name="com.rb.gwthope.server.dao.UserDAOTest">
-        <test-method status="SKIP" signature="findByUser()" name="findByUser" duration-ms="0" started-at="2012-03-04T22:02:39Z" finished-at="2012-03-04T22:02:39Z">
+    <test name="com.rb.gwthope.server.UserDaoImplTest">
+      <class name="com.rb.gwthope.server.UserDaoImplTest">
+        <test-method status="PASS" signature="unitilsAfterTestTearDown(java.lang.reflect.Method)" name="unitilsAfterTestTearDown" is-config="true" duration-ms="15" started-at="2012-03-06T23:43:58Z" finished-at="2012-03-06T23:43:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rb.gwthope.server.UserDaoImplTest.testFindById()]]>
+              </value>
+            </param>
+          </params>
         </test-method>
-        <test-method status="FAIL" signature="init()" name="init" is-config="true" duration-ms="0" started-at="2012-03-04T22:02:39Z" finished-at="2012-03-04T22:02:39Z">
-          <exception class="javax.persistence.PersistenceException">
-            <message>
-              <![CDATA[[PersistenceUnit: testPU] Unable to configure EntityManagerFactory]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[javax.persistence.PersistenceException: [PersistenceUnit: testPU] Unable to configure EntityManagerFactory
-	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:371)
-	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:55)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:48)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:32)
-	at com.rb.gwthope.server.dao.UserDAOTest.init(UserDAOTest.java:16)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:607)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:417)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:154)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:464)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:669)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:956)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:110)
-	at org.testng.TestRunner.runWorkers(TestRunner.java:759)
-	at org.testng.TestRunner.privateRun(TestRunner.java:592)
-	at org.testng.TestRunner.run(TestRunner.java:486)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:327)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:299)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:204)
-	at org.testng.TestNG.createAndRunSuiteRunners(TestNG.java:877)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:842)
-	at org.testng.TestNG.run(TestNG.java:751)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:73)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:124)
-Caused by: org.hibernate.HibernateException: Unable to get the default Bean Validation factory
-	at org.hibernate.cfg.beanvalidation.BeanValidationActivator.applyDDL(BeanValidationActivator.java:104)
-	at org.hibernate.cfg.AnnotationConfiguration.applyBeanValidationConstraintsOnDDL(AnnotationConfiguration.java:477)
-	at org.hibernate.cfg.AnnotationConfiguration.applyConstraintsToDDL(AnnotationConfiguration.java:429)
-	at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:403)
-	at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
-	at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
-	at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
-	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
-	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:275)
-	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:359)
-	... 28 more
-Caused by: java.lang.reflect.InvocationTargetException
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-	at java.lang.reflect.Method.invoke(Method.java:597)
-	at org.hibernate.cfg.beanvalidation.BeanValidationActivator.applyDDL(BeanValidationActivator.java:95)
-	... 37 more
-Caused by: org.hibernate.HibernateException: Unable to build the default ValidatorFactory
-	at org.hibernate.cfg.beanvalidation.TypeSafeActivator.getValidatorFactory(TypeSafeActivator.java:302)
-	at org.hibernate.cfg.beanvalidation.TypeSafeActivator.applyDDL(TypeSafeActivator.java:82)
-	... 42 more
-Caused by: javax.validation.ValidationException: Unable to find a default provider
-	at javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:264)
-	at javax.validation.Validation.buildDefaultValidatorFactory(Validation.java:111)
-	at org.hibernate.cfg.beanvalidation.TypeSafeActivator.getValidatorFactory(TypeSafeActivator.java:299)
-	... 43 more
-]]>
-            </full-stacktrace>
-          </exception>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="15" started-at="2012-03-06T23:43:58Z" finished-at="2012-03-06T23:43:58Z">
+        </test-method>
+        <test-method status="PASS" signature="testFindById()" name="testFindById" duration-ms="32" started-at="2012-03-06T23:43:58Z" finished-at="2012-03-06T23:43:58Z">
+        </test-method>
+        <test-method status="PASS" signature="unitilsBeforeClass()" name="unitilsBeforeClass" is-config="true" duration-ms="125" started-at="2012-03-06T23:43:56Z" finished-at="2012-03-06T23:43:56Z">
+        </test-method>
+        <test-method status="PASS" signature="unitilsBeforeTestSetUp(java.lang.reflect.Method)" name="unitilsBeforeTestSetUp" is-config="true" duration-ms="1531" started-at="2012-03-06T23:43:56Z" finished-at="2012-03-06T23:43:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rb.gwthope.server.UserDaoImplTest.testFindById()]]>
+              </value>
+            </param>
+          </params>
         </test-method>
       </class>
     </test>

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public abstract class AbstractJpaDao< T extends Serializable > {
+public abstract class AbstractJpaDao< K,T extends Serializable > {
 	   
 	   private Class< T > clazz;
 	   
@@ -17,7 +17,7 @@ public abstract class AbstractJpaDao< T extends Serializable > {
 	      this.clazz = clazzToSet;
 	   }
 	   
-	   public T findOne( final Long id ){
+	   public T findOne( final K id ){
 	      return entityManager.find( clazz, id );
 	   }
 	   @SuppressWarnings("unchecked")
@@ -37,12 +37,12 @@ public abstract class AbstractJpaDao< T extends Serializable > {
 	   public void delete( final T entity ){
 	      entityManager.remove( entity );
 	   }
-	   public void deleteById( final Long entityId ){
+	   public void deleteById( final K entityId ){
 	      final T entity = findOne( entityId );
 	      
 	      delete( entity );
 	   }
-	   public T getById(final Long id) {
+	   public T getById(final K id) {
 		   return findOne(id);
 	   }
 

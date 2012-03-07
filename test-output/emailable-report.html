@@ -29,110 +29,15 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing=0 cellpadding=0 class="param">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">com.rb.gwthope.server.dao.UserDAOTest</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">0</td><td class="numi">0.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">com.rb.gwthope.server.UserDaoImplTest</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">1.7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <a id="summary"></a>
 <table cellspacing=0 cellpadding=0 class="passed">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>
-<tr><th colspan="4">com.rb.gwthope.server.dao.UserDAOTest &#8212; failed (configuration methods)</th></tr>
-<tr class="failedodd"><td rowspan="1">com.rb.gwthope.server.dao.UserDAOTest<td><a href="#m1"><b>init</b> </a></td><td class="numi">1</td><td class="numi">0</td></tr>
-<tr><th colspan="4">com.rb.gwthope.server.dao.UserDAOTest &#8212; skipped</th></tr>
-<tr class="skippedodd"><td rowspan="1">com.rb.gwthope.server.dao.UserDAOTest<td><a href="#m2"><b>findByUser</b> </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr><th colspan="4">com.rb.gwthope.server.UserDaoImplTest &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">com.rb.gwthope.server.UserDaoImplTest<td><a href="#m1"><b>testFindById</b> </a></td><td class="numi">1</td><td class="numi">32</td></tr>
 </table>
-<h1>com.rb.gwthope.server.dao.UserDAOTest</h1>
-<a id="m1"></a><h2>com.rb.gwthope.server.dao.UserDAOTest:init</h2>
-<div style="padding-left:3em">
-<p>[PersistenceUnit: testPU] Unable to configure EntityManagerFactory</p>
-org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:371)
-<br/>at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:55)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:48)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:32)
-<br/>at com.rb.gwthope.server.dao.UserDAOTest.init(UserDAOTest.java:16)
-<br/>25 lines not shown
-<p>Caused by Unable to get the default Bean Validation factory</p>
-org.hibernate.cfg.beanvalidation.BeanValidationActivator.applyDDL(BeanValidationActivator.java:104)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyBeanValidationConstraintsOnDDL(AnnotationConfiguration.java:477)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyConstraintsToDDL(AnnotationConfiguration.java:429)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:403)
-<br/>at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
-<br/>at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
-<br/>at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:275)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:359)
-<br/>at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:55)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:48)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:32)
-<br/>at com.rb.gwthope.server.dao.UserDAOTest.init(UserDAOTest.java:16)
-<br/>25 lines not shown
-<p>Caused by null</p>
-sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-<br/>at java.lang.reflect.Method.invoke(Method.java:597)
-<br/>at org.hibernate.cfg.beanvalidation.BeanValidationActivator.applyDDL(BeanValidationActivator.java:95)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyBeanValidationConstraintsOnDDL(AnnotationConfiguration.java:477)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyConstraintsToDDL(AnnotationConfiguration.java:429)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:403)
-<br/>at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
-<br/>at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
-<br/>at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:275)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:359)
-<br/>at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:55)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:48)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:32)
-<br/>at com.rb.gwthope.server.dao.UserDAOTest.init(UserDAOTest.java:16)
-<br/>25 lines not shown
-<p>Caused by Unable to build the default ValidatorFactory</p>
-org.hibernate.cfg.beanvalidation.TypeSafeActivator.getValidatorFactory(TypeSafeActivator.java:302)
-<br/>at org.hibernate.cfg.beanvalidation.TypeSafeActivator.applyDDL(TypeSafeActivator.java:82)
-<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-<br/>at java.lang.reflect.Method.invoke(Method.java:597)
-<br/>at org.hibernate.cfg.beanvalidation.BeanValidationActivator.applyDDL(BeanValidationActivator.java:95)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyBeanValidationConstraintsOnDDL(AnnotationConfiguration.java:477)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyConstraintsToDDL(AnnotationConfiguration.java:429)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:403)
-<br/>at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
-<br/>at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
-<br/>at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:275)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:359)
-<br/>at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:55)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:48)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:32)
-<br/>at com.rb.gwthope.server.dao.UserDAOTest.init(UserDAOTest.java:16)
-<br/>25 lines not shown
-<p>Caused by Unable to find a default provider</p>
-javax.validation.Validation$GenericBootstrapImpl.configure(Validation.java:264)
-<br/>at javax.validation.Validation.buildDefaultValidatorFactory(Validation.java:111)
-<br/>at org.hibernate.cfg.beanvalidation.TypeSafeActivator.getValidatorFactory(TypeSafeActivator.java:299)
-<br/>at org.hibernate.cfg.beanvalidation.TypeSafeActivator.applyDDL(TypeSafeActivator.java:82)
-<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
-<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
-<br/>at java.lang.reflect.Method.invoke(Method.java:597)
-<br/>at org.hibernate.cfg.beanvalidation.BeanValidationActivator.applyDDL(BeanValidationActivator.java:95)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyBeanValidationConstraintsOnDDL(AnnotationConfiguration.java:477)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.applyConstraintsToDDL(AnnotationConfiguration.java:429)
-<br/>at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:403)
-<br/>at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
-<br/>at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
-<br/>at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:275)
-<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:359)
-<br/>at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:55)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:48)
-<br/>at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:32)
-<br/>at com.rb.gwthope.server.dao.UserDAOTest.init(UserDAOTest.java:16)
-<br/>25 lines not shown
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<a id="m2"></a><h2>com.rb.gwthope.server.dao.UserDAOTest:findByUser</h2>
+<h1>com.rb.gwthope.server.UserDaoImplTest</h1>
+<a id="m1"></a><h2>com.rb.gwthope.server.UserDaoImplTest:testFindById</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

@@ -1,6 +1,8 @@
 package com.rb.gwthope.client;
 
 import com.rb.gwthope.shared.FieldVerifier;
+import com.rb.gwthope.shared.services.GreetingService;
+import com.rb.gwthope.shared.services.GreetingServiceAsync;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.rpc.AsyncCallback;

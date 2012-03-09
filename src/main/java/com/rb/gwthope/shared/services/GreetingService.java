@@ -1,4 +1,4 @@
-package com.rb.gwthope.client;
+package com.rb.gwthope.shared.services;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;

@@ -1,42 +1,51 @@
 package com.rb.gwthope.client.view.widget;
 
 import com.google.gwt.user.client.ui.Composite;
+
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DockPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-import com.rb.gwthope.client.presenter.MainPresenter;
-import com.rb.gwthope.client.view.Display;
+import com.rb.gwthope.client.view.presenter.MainPresenter.Display;
 
-public class MainWidget extends Composite implements MainPresenter.Display {
+/**
+ * Main widget, instead of using html layout
+ * @author caburnar
+ * 
+ */
+public class MainWidget extends Composite implements Display{
 	
-	private final DockPanel panel;
+	private final DockPanel dockPanel;
 	private Widget content;
-
+	
 	public MainWidget() {
-
-		panel = new DockPanel();
-		panel.setStyleName("main");
-		initWidget(panel);
-
+		dockPanel = new DockPanel();
+		
+		initWidget(dockPanel);
+//		this.addMenu(null);
 	}
 
 	public void removeContent() {
 		if (content != null) {
-			panel.remove(content);
+			dockPanel.remove(content);
 		}
+		
 	}
-
-	public void addContent(Display display) {
-		removeContent();
-		content = display.asWidget();
-		panel.add(display.asWidget(), DockPanel.CENTER);
-	}
-
-	public void addMenu(Display display) {
-		panel.add(display.asWidget(), DockPanel.NORTH);
-	}
-
+	
 	public Widget asWidget() {
 		return this;
+	}
+
+	public void addMenu(com.rb.gwthope.client.view.Display display) {
+		dockPanel.add(display.asWidget(),DockPanel.NORTH);
+		
+	}
+
+	public void addContent(com.rb.gwthope.client.view.Display display) {
+		removeContent();
+		content = display.asWidget();
+		dockPanel.add(display.asWidget(),DockPanel.CENTER);
+		
 	}
 
 }

@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.rb.gwthope.client.place.ContactPlace;
 import com.rb.gwthope.client.place.EditContactPlace;
+import com.rb.gwthope.client.place.MenuPlace;
 import com.rb.gwthope.client.place.NewContactPlace;
 
 /**
@@ -25,11 +26,17 @@ public class AppPlaceFactory {
 	EditContactPlace.Tokenizer editContactPlaceTokenizer;
 	
 	@Inject
+	MenuPlace.Tokenizer menuPlaceTokenizer;
+	
+	@Inject
 	Provider<ContactPlace> contactProvider;
 	@Inject
 	Provider<NewContactPlace> newContactProvider;
 	@Inject
 	Provider<EditContactPlace> editContactProvider;
+	
+	@Inject
+	Provider<MenuPlace> menuPlace;
 
 	// contact place
 	public ContactPlace.Tokenizer getContactPlaceTokenizer() {
@@ -58,6 +65,22 @@ public class AppPlaceFactory {
 
 	public EditContactPlace getEditContactPlace() {
 		return editContactProvider.get();
+	}
+
+	public MenuPlace.Tokenizer getMenuPlaceTokenizer() {
+		return menuPlaceTokenizer;
+	}
+
+	public void setMenuPlaceTokenizer(MenuPlace.Tokenizer menuPlaceTokenizer) {
+		this.menuPlaceTokenizer = menuPlaceTokenizer;
+	}
+
+	public MenuPlace getMenuPlace() {
+		return menuPlace.get();
+	}
+
+	public void setMenuPlace(Provider<MenuPlace> menuPlace) {
+		this.menuPlace = menuPlace;
 	}
 	
 }

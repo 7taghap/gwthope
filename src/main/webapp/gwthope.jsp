@@ -1,4 +1,19 @@
-<!doctype html>
+
+<%
+
+ out.println("<ul>");
+
+ java.util.Enumeration names = request.getHeaderNames();
+ while (names.hasMoreElements()) {
+   String name = (String) names.nextElement();
+   String value = request.getHeader(name);
+   out.println(" <li>     <b>" + name + "=</b>" + value +"</li>");
+ }
+ out.println("</ul>");
+
+ %>
+ 
+ <!doctype html>
 <!-- The DOCTYPE declaration above will set the    -->
 <!-- browser's rendering engine into               -->
 <!-- "Standards Mode". Replacing this declaration  -->
@@ -67,3 +82,4 @@
 </div>
   </body>
 </html>
+ 

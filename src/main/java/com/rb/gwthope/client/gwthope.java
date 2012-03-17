@@ -5,6 +5,7 @@ import com.rb.gwthope.client.event.GreetingEventHandler;
 import com.rb.gwthope.client.gin.ContactsGinjector;
 import com.rb.gwthope.client.gin.HopeInjector;
 import com.rb.gwthope.client.place.ContactPlace;
+import com.rb.gwthope.client.place.MenuPlace;
 import com.rb.gwthope.client.view.presenter.AppPlaceFactory;
 import com.rb.gwthope.client.view.presenter.AppPlaceHistoryMapper;
 import com.rb.gwthope.client.view.presenter.GreetingPresenter;
@@ -72,28 +73,7 @@ public class gwthope implements EntryPoint {
 	
 	private com.rb.gwthope.client.gin.ContactsGinjector injector = GWT.create(ContactsGinjector.class);
   public void onModuleLoad() {
-//	  QuickStartInjector injector = GWT.create(QuickStartInjector.class);
-//	 QuickStartGinApp ginApp = injector.getQuickStartGinApp();
-//	 ginApp.run();
-	  //final MainPresenter mainPresenter = ginjector.getMainPresenter();
-//	  simplePresenter();
-//	  injectorImpl();
-	  ContactClientFactory();
-	  //mainPresenter.bind();
-	  //RootPanel.get().add(mainPresenter.getDisplay().asWidget());
-      //logEvent(ginjector.getEventBus());
-//	  greetingSample();
-//	  HopeInjector injector = GWT.create(HopeInjector.class);
-//	  GreetingPresenter injector2 = GWT.create(HopeInjector.class);
-//	  QuickStartGinApp quickStart = injector.getQuickStartGinApp();
-//	  quickStart.run();
-//	  GreetingPresenter greet = injector.getGreetingPresenter();
-//	  greet.bind();
-//	  RootPanel.get().add(greet.getDisplay().asWidget());
-	 
-//	  QuickStartGinApp quickStart = injector.getQuickStartGinApp();
-//	  quickStart.run();
-//	  logEvent(injector.getEventBus());
+	  simplePresenter();
   }
   private void ContactClientFactory() {
 		EventBus eventBus = injector.getEventBus();
@@ -105,14 +85,14 @@ public class gwthope implements EntryPoint {
 
 		AppPlaceFactory factory = injector.getAppPlaceFactory();
 		ContactPlace defaultPlace = factory.getContactPlace();
-		
+		MenuPlace menuPlace = factory.getMenuPlace();
 		AppPlaceHistoryMapper historyMapper = GWT.create(AppPlaceHistoryMapper.class);
 		historyMapper.setFactory(factory);
 		
 		PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);
-		historyHandler.register(placeController, eventBus, defaultPlace);
+		historyHandler.register(placeController, eventBus, menuPlace);
 		
-		RootPanel.get().add(appWidget);
+		RootPanel.get("wrap").add(appWidget);
 		
 		historyHandler.handleCurrentHistory();
   }

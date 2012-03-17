@@ -247,7 +247,7 @@
 				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin 
 					documentation at codehaus.org -->
 				<configuration>
-					<runTarget>gwthope.html</runTarget>
+					<runTarget>gwthope.jsp</runTarget>
 					<hostedWebapp>${webappDirectory}</hostedWebapp>
 					<!-- <gwtHome>${gwtHome}</gwtHome> -->
 					<i18nMessagesBundle>com.rb.gwthope.client.Messages</i18nMessagesBundle>

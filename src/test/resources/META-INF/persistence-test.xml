@@ -7,9 +7,13 @@
   <provider>org.hibernate.ejb.HibernatePersistence</provider>
 <!--   <jta-data-source>jdbc/myRedhorse</jta-data-source> -->
   <class>com.rb.gwthope.shared.dto.User</class>
+  <class>com.rb.gwthope.shared.dto.UnitConversion</class>
+  <class>com.rb.gwthope.shared.dto.Product</class>
+  <class>com.rb.gwthope.shared.dto.ProductDtl</class>
+    <class>com.rb.gwthope.shared.dto.UnitType</class>
   <exclude-unlisted-classes>true</exclude-unlisted-classes>
   <properties>
-   <property name="hibernate.hbm2ddl.auto" value="update" />
+   <property name="hibernate.hbm2ddl.auto" value="auto" />
 <!--    <property name="hibernate.show_sql" value="false" /> -->
  
  <!--  HSQL DB Connection properties

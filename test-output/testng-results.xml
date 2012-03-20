@@ -4,31 +4,154 @@
   <suite name="gwthope">
     <groups>
     </groups>
-    <test name="com.rb.gwthope.server.UserDaoImplTest">
-      <class name="com.rb.gwthope.server.UserDaoImplTest">
-        <test-method status="PASS" signature="unitilsAfterTestTearDown(java.lang.reflect.Method)" name="unitilsAfterTestTearDown" is-config="true" duration-ms="15" started-at="2012-03-06T23:43:58Z" finished-at="2012-03-06T23:43:58Z">
+    <test name="com.rb.gwthope.server.UnitConversionDaoImplTest">
+      <class name="com.rb.gwthope.server.UnitConversionDaoImplTest">
+        <test-method status="FAIL" signature="unitilsBeforeTestSetUp(java.lang.reflect.Method)" name="unitilsBeforeTestSetUp" is-config="true" duration-ms="0" started-at="2012-03-21T00:53:34Z" finished-at="2012-03-21T00:53:34Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.rb.gwthope.server.UserDaoImplTest.testFindById()]]>
+                <![CDATA[public void com.rb.gwthope.server.UnitConversionDaoImplTest.getAllUnitConversions()]]>
               </value>
             </param>
           </params>
+          <exception class="org.hibernate.AnnotationException">
+            <message>
+              <![CDATA[Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rb.gwthope.shared.dto.Product.productDtls[com.rb.gwthope.shared.dto.ProductDtl]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rb.gwthope.shared.dto.Product.productDtls[com.rb.gwthope.shared.dto.ProductDtl]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1150)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:680)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:619)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1221)
+	at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:383)
+	at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
+	at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
+	at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:673)
+	at org.unitils.orm.jpa.util.provider.hibernate.UnitilsHibernatePersistenceProvider.createContainerEntityManagerFactory(UnitilsHibernatePersistenceProvider.java:47)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:268)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.createEntityManagerFactoryBean(JpaEntityManagerFactoryLoader.java:77)
+	at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:44)
+	at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:40)
+	at org.unitils.orm.common.OrmModule.getConfiguredPersistenceUnit(OrmModule.java:181)
+	at org.unitils.orm.common.OrmModule.getPersistenceUnit(OrmModule.java:136)
+	at org.unitils.orm.jpa.JpaModule.doGetPersistenceContext(JpaModule.java:172)
+	at org.unitils.orm.jpa.JpaModule.doGetPersistenceContext(JpaModule.java:76)
+	at org.unitils.orm.common.OrmModule.getPersistenceContext(OrmModule.java:232)
+	at org.unitils.orm.jpa.JpaModule.injectEntityManager(JpaModule.java:265)
+	at org.unitils.orm.jpa.JpaModule.injectJpaResourcesInto(JpaModule.java:228)
+	at org.unitils.orm.jpa.JpaModule.injectJpaResourcesIntoTestObject(JpaModule.java:214)
+	at org.unitils.orm.jpa.JpaModule$JpaTestListener.beforeTestSetUp(JpaModule.java:295)
+	at org.unitils.core.Unitils$UnitilsTestListener.beforeTestSetUp(Unitils.java:273)
+	at org.unitils.UnitilsTestNG.unitilsBeforeTestSetUp(UnitilsTestNG.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:607)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:417)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:154)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:464)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:669)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:956)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:110)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:759)
+	at org.testng.TestRunner.privateRun(TestRunner.java:592)
+	at org.testng.TestRunner.run(TestRunner.java:486)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:327)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:299)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:204)
+	at org.testng.TestNG.createAndRunSuiteRunners(TestNG.java:877)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:842)
+	at org.testng.TestNG.run(TestNG.java:751)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:73)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:124)
+]]>
+            </full-stacktrace>
+          </exception>
         </test-method>
-        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="15" started-at="2012-03-06T23:43:58Z" finished-at="2012-03-06T23:43:58Z">
+        <test-method status="PASS" signature="unitilsBeforeClass()" name="unitilsBeforeClass" is-config="true" duration-ms="156" started-at="2012-03-21T00:53:34Z" finished-at="2012-03-21T00:53:34Z">
         </test-method>
-        <test-method status="PASS" signature="testFindById()" name="testFindById" duration-ms="32" started-at="2012-03-06T23:43:58Z" finished-at="2012-03-06T23:43:58Z">
+        <test-method status="SKIP" signature="getAllUnitConversions()" name="getAllUnitConversions" duration-ms="0" started-at="2012-03-21T00:53:35Z" finished-at="2012-03-21T00:53:35Z">
         </test-method>
-        <test-method status="PASS" signature="unitilsBeforeClass()" name="unitilsBeforeClass" is-config="true" duration-ms="125" started-at="2012-03-06T23:43:56Z" finished-at="2012-03-06T23:43:56Z">
-        </test-method>
-        <test-method status="PASS" signature="unitilsBeforeTestSetUp(java.lang.reflect.Method)" name="unitilsBeforeTestSetUp" is-config="true" duration-ms="1531" started-at="2012-03-06T23:43:56Z" finished-at="2012-03-06T23:43:58Z">
+        <test-method status="FAIL" signature="unitilsAfterTestTearDown(java.lang.reflect.Method)" name="unitilsAfterTestTearDown" is-config="true" duration-ms="0" started-at="2012-03-21T00:53:35Z" finished-at="2012-03-21T00:53:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.rb.gwthope.server.UserDaoImplTest.testFindById()]]>
+                <![CDATA[public void com.rb.gwthope.server.UnitConversionDaoImplTest.getAllUnitConversions()]]>
               </value>
             </param>
           </params>
+          <exception class="org.hibernate.AnnotationException">
+            <message>
+              <![CDATA[Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rb.gwthope.shared.dto.Product.productDtls[com.rb.gwthope.shared.dto.ProductDtl]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.hibernate.AnnotationException: Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rb.gwthope.shared.dto.Product.productDtls[com.rb.gwthope.shared.dto.ProductDtl]
+	at org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1150)
+	at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:680)
+	at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:619)
+	at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1221)
+	at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:383)
+	at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
+	at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
+	at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:673)
+	at org.unitils.orm.jpa.util.provider.hibernate.UnitilsHibernatePersistenceProvider.createContainerEntityManagerFactory(UnitilsHibernatePersistenceProvider.java:47)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:268)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+	at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.createEntityManagerFactoryBean(JpaEntityManagerFactoryLoader.java:77)
+	at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:44)
+	at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:40)
+	at org.unitils.orm.common.OrmModule.getConfiguredPersistenceUnit(OrmModule.java:181)
+	at org.unitils.orm.common.OrmModule.getPersistenceUnit(OrmModule.java:136)
+	at org.unitils.orm.jpa.JpaModule.doGetActivePersistenceContext(JpaModule.java:176)
+	at org.unitils.orm.jpa.JpaModule.doGetActivePersistenceContext(JpaModule.java:76)
+	at org.unitils.orm.common.OrmModule.getActivePersistenceContext(OrmModule.java:261)
+	at org.unitils.orm.common.OrmModule.flushDatabaseUpdates(OrmModule.java:283)
+	at org.unitils.database.DatabaseModule.flushDatabaseUpdates(DatabaseModule.java:270)
+	at org.unitils.database.DatabaseModule.commitTransaction(DatabaseModule.java:420)
+	at org.unitils.database.DatabaseModule.endTransactionForTestMethod(DatabaseModule.java:396)
+	at org.unitils.database.DatabaseModule$DatabaseTestListener.afterTestTearDown(DatabaseModule.java:540)
+	at org.unitils.core.Unitils$UnitilsTestListener.afterTestTearDown(Unitils.java:315)
+	at org.unitils.UnitilsTestNG.unitilsAfterTestTearDown(UnitilsTestNG.java:79)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:607)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:417)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:154)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:669)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:956)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:110)
+	at org.testng.TestRunner.runWorkers(TestRunner.java:759)
+	at org.testng.TestRunner.privateRun(TestRunner.java:592)
+	at org.testng.TestRunner.run(TestRunner.java:486)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:327)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:299)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:204)
+	at org.testng.TestNG.createAndRunSuiteRunners(TestNG.java:877)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:842)
+	at org.testng.TestNG.run(TestNG.java:751)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:73)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:124)
+]]>
+            </full-stacktrace>
+          </exception>
+        </test-method>
+        <test-method status="SKIP" signature="setUp()" name="setUp" is-config="true" duration-ms="0" started-at="2012-03-21T00:53:35Z" finished-at="2012-03-21T00:53:35Z">
         </test-method>
       </class>
     </test>

@@ -43,7 +43,7 @@
 
   <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 <!--     <property name="persistenceXmlLocation" value="classpath:/META-INF/persistence.xml" /> -->
-<!--     <property name="persistenceUnitName" value="unitPersistenceUnit" /> -->
+<!--     <property name="persistenceUnitName" value="MyPersistentUnit" /> -->
     <property name="dataSource" ref="datasource" />
     <property name="packagesToScan" value="com.rb.gwthope" />
     <property name="jpaVendorAdapter" ref="jpaVendorAdapter" />

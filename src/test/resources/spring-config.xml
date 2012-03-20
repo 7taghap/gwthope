@@ -6,9 +6,11 @@
 
 
     		
-  <bean id="userDao" class="com.rb.gwthope.server.UserDaoImpl">
+  <bean id="userDao" class="com.rb.gwthope.server.dao.impl.UserDaoImpl">
         <property name="entityManager" ref="entityManagerFactory"/>
     </bean>
-  
+  <bean id="unitConversionDao" class="com.rb.gwthope.server.dao.impl.UnitConversionDaoImpl">
+        <property name="entityManager" ref="entityManagerFactory"/>
+    </bean>
     
 </beans>

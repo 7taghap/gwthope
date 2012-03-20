@@ -29,15 +29,148 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing=0 cellpadding=0 class="param">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">com.rb.gwthope.server.UserDaoImplTest</td><td class="numi">1</td><td class="numi">1</td><td class="numi">0</td><td class="numi">0</td><td class="numi">1.7 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">com.rb.gwthope.server.UnitConversionDaoImplTest</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">0</td><td class="numi">1.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <a id="summary"></a>
 <table cellspacing=0 cellpadding=0 class="passed">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Time<br/>(Msecs)</th></tr>
-<tr><th colspan="4">com.rb.gwthope.server.UserDaoImplTest &#8212; passed</th></tr>
-<tr class="passedodd"><td rowspan="1">com.rb.gwthope.server.UserDaoImplTest<td><a href="#m1"><b>testFindById</b> </a></td><td class="numi">1</td><td class="numi">32</td></tr>
+<tr><th colspan="4">com.rb.gwthope.server.UnitConversionDaoImplTest &#8212; failed (configuration methods)</th></tr>
+<tr class="failedodd"><td rowspan="2">com.rb.gwthope.server.UnitConversionDaoImplTest<td><a href="#m1"><b>unitilsAfterTestTearDown</b> </a></td><td class="numi">1</td><td class="numi">0</td></tr><tr class="failedodd"><td><a href="#m2"><b>unitilsBeforeTestSetUp</b> </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr><th colspan="4">com.rb.gwthope.server.UnitConversionDaoImplTest &#8212; skipped (configuration methods)</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.rb.gwthope.server.UnitConversionDaoImplTest<td><a href="#m3"><b>setUp</b> </a></td><td class="numi">1</td><td class="numi">0</td></tr>
+<tr><th colspan="4">com.rb.gwthope.server.UnitConversionDaoImplTest &#8212; skipped</th></tr>
+<tr class="skippedodd"><td rowspan="1">com.rb.gwthope.server.UnitConversionDaoImplTest<td><a href="#m4"><b>getAllUnitConversions</b> </a></td><td class="numi">1</td><td class="numi">0</td></tr>
 </table>
-<h1>com.rb.gwthope.server.UserDaoImplTest</h1>
-<a id="m1"></a><h2>com.rb.gwthope.server.UserDaoImplTest:testFindById</h2>
+<h1>com.rb.gwthope.server.UnitConversionDaoImplTest</h1>
+<a id="m1"></a><h2>com.rb.gwthope.server.UnitConversionDaoImplTest:unitilsAfterTestTearDown</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">public void com.rb.gwthope.server.UnitConversionDaoImplTest.getAllUnitConversions()</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rb.gwthope.shared.dto.Product.productDtls[com.rb.gwthope.shared.dto.ProductDtl]</p>
+org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1150)
+<br/>at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:680)
+<br/>at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:619)
+<br/>at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+<br/>at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1221)
+<br/>at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:383)
+<br/>at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
+<br/>at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
+<br/>at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
+<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
+<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:673)
+<br/>at org.unitils.orm.jpa.util.provider.hibernate.UnitilsHibernatePersistenceProvider.createContainerEntityManagerFactory(UnitilsHibernatePersistenceProvider.java:47)
+<br/>at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:268)
+<br/>at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+<br/>at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.createEntityManagerFactoryBean(JpaEntityManagerFactoryLoader.java:77)
+<br/>at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:44)
+<br/>at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:40)
+<br/>at org.unitils.orm.common.OrmModule.getConfiguredPersistenceUnit(OrmModule.java:181)
+<br/>at org.unitils.orm.common.OrmModule.getPersistenceUnit(OrmModule.java:136)
+<br/>at org.unitils.orm.jpa.JpaModule.doGetActivePersistenceContext(JpaModule.java:176)
+<br/>at org.unitils.orm.jpa.JpaModule.doGetActivePersistenceContext(JpaModule.java:76)
+<br/>at org.unitils.orm.common.OrmModule.getActivePersistenceContext(OrmModule.java:261)
+<br/>at org.unitils.orm.common.OrmModule.flushDatabaseUpdates(OrmModule.java:283)
+<br/>at org.unitils.database.DatabaseModule.flushDatabaseUpdates(DatabaseModule.java:270)
+<br/>at org.unitils.database.DatabaseModule.commitTransaction(DatabaseModule.java:420)
+<br/>at org.unitils.database.DatabaseModule.endTransactionForTestMethod(DatabaseModule.java:396)
+<br/>at org.unitils.database.DatabaseModule$DatabaseTestListener.afterTestTearDown(DatabaseModule.java:540)
+<br/>at org.unitils.core.Unitils$UnitilsTestListener.afterTestTearDown(Unitils.java:315)
+<br/>at org.unitils.UnitilsTestNG.unitilsAfterTestTearDown(UnitilsTestNG.java:79)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+<br/>at java.lang.reflect.Method.invoke(Method.java:597)
+<br/>at org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:607)
+<br/>at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:417)
+<br/>at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:154)
+<br/>at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+<br/>at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:669)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:956)
+<br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+<br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:110)
+<br/>at org.testng.TestRunner.runWorkers(TestRunner.java:759)
+<br/>at org.testng.TestRunner.privateRun(TestRunner.java:592)
+<br/>at org.testng.TestRunner.run(TestRunner.java:486)
+<br/>at org.testng.SuiteRunner.runTest(SuiteRunner.java:332)
+<br/>at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:327)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:299)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:204)
+<br/>at org.testng.TestNG.createAndRunSuiteRunners(TestNG.java:877)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:842)
+<br/>at org.testng.TestNG.run(TestNG.java:751)
+<br/>at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:73)
+<br/>at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:124)
+<br/>1 lines not shown
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>com.rb.gwthope.server.UnitConversionDaoImplTest:unitilsBeforeTestSetUp</h2>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th style="padding-left:1em;padding-right:1em">Parameter #1</th></tr>
+<tr><td style="padding-left:.5em;padding-right:2em">public void com.rb.gwthope.server.UnitConversionDaoImplTest.getAllUnitConversions()</td>
+</tr>
+<tr><td style="padding-left:3em" colspan="1">
+<p>Use of @OneToMany or @ManyToMany targeting an unmapped class: com.rb.gwthope.shared.dto.Product.productDtls[com.rb.gwthope.shared.dto.ProductDtl]</p>
+org.hibernate.cfg.annotations.CollectionBinder.bindManyToManySecondPass(CollectionBinder.java:1150)
+<br/>at org.hibernate.cfg.annotations.CollectionBinder.bindStarToManySecondPass(CollectionBinder.java:680)
+<br/>at org.hibernate.cfg.annotations.CollectionBinder$1.secondPass(CollectionBinder.java:619)
+<br/>at org.hibernate.cfg.CollectionSecondPass.doSecondPass(CollectionSecondPass.java:66)
+<br/>at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1221)
+<br/>at org.hibernate.cfg.AnnotationConfiguration.secondPassCompile(AnnotationConfiguration.java:383)
+<br/>at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1206)
+<br/>at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1449)
+<br/>at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
+<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1077)
+<br/>at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:673)
+<br/>at org.unitils.orm.jpa.util.provider.hibernate.UnitilsHibernatePersistenceProvider.createContainerEntityManagerFactory(UnitilsHibernatePersistenceProvider.java:47)
+<br/>at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:268)
+<br/>at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:310)
+<br/>at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.createEntityManagerFactoryBean(JpaEntityManagerFactoryLoader.java:77)
+<br/>at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:44)
+<br/>at org.unitils.orm.jpa.util.JpaEntityManagerFactoryLoader.getConfiguredOrmPersistenceUnit(JpaEntityManagerFactoryLoader.java:40)
+<br/>at org.unitils.orm.common.OrmModule.getConfiguredPersistenceUnit(OrmModule.java:181)
+<br/>at org.unitils.orm.common.OrmModule.getPersistenceUnit(OrmModule.java:136)
+<br/>at org.unitils.orm.jpa.JpaModule.doGetPersistenceContext(JpaModule.java:172)
+<br/>at org.unitils.orm.jpa.JpaModule.doGetPersistenceContext(JpaModule.java:76)
+<br/>at org.unitils.orm.common.OrmModule.getPersistenceContext(OrmModule.java:232)
+<br/>at org.unitils.orm.jpa.JpaModule.injectEntityManager(JpaModule.java:265)
+<br/>at org.unitils.orm.jpa.JpaModule.injectJpaResourcesInto(JpaModule.java:228)
+<br/>at org.unitils.orm.jpa.JpaModule.injectJpaResourcesIntoTestObject(JpaModule.java:214)
+<br/>at org.unitils.orm.jpa.JpaModule$JpaTestListener.beforeTestSetUp(JpaModule.java:295)
+<br/>at org.unitils.core.Unitils$UnitilsTestListener.beforeTestSetUp(Unitils.java:273)
+<br/>at org.unitils.UnitilsTestNG.unitilsBeforeTestSetUp(UnitilsTestNG.java:62)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+<br/>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+<br/>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+<br/>at java.lang.reflect.Method.invoke(Method.java:597)
+<br/>at org.testng.internal.MethodHelper.invokeMethod(MethodHelper.java:607)
+<br/>at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:417)
+<br/>at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:154)
+<br/>at org.testng.internal.Invoker.invokeMethod(Invoker.java:464)
+<br/>at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:669)
+<br/>at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:956)
+<br/>at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+<br/>at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:110)
+<br/>at org.testng.TestRunner.runWorkers(TestRunner.java:759)
+<br/>at org.testng.TestRunner.privateRun(TestRunner.java:592)
+<br/>at org.testng.TestRunner.run(TestRunner.java:486)
+<br/>at org.testng.SuiteRunner.runTest(SuiteRunner.java:332)
+<br/>at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:327)
+<br/>at org.testng.SuiteRunner.privateRun(SuiteRunner.java:299)
+<br/>at org.testng.SuiteRunner.run(SuiteRunner.java:204)
+<br/>at org.testng.TestNG.createAndRunSuiteRunners(TestNG.java:877)
+<br/>at org.testng.TestNG.runSuitesLocally(TestNG.java:842)
+<br/>at org.testng.TestNG.run(TestNG.java:751)
+<br/>at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:73)
+<br/>at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:124)
+<br/>1 lines not shown
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>com.rb.gwthope.server.UnitConversionDaoImplTest:setUp</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>com.rb.gwthope.server.UnitConversionDaoImplTest:getAllUnitConversions</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

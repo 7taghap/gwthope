@@ -1,14 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="5" skipfailedinvocationCounts="false" verbose="1" name="Failed suite [gwthope]" junit="false" parallel="false" annotations="JDK">
-  <test name="com.rb.gwthope.server.UserDaoImplTest(failed)" junit="false" parallel="false" annotations="JDK">
+  <test name="com.rb.gwthope.server.UnitConversionDaoImplTest(failed)" junit="false" parallel="false" annotations="JDK">
     <classes>
-      <class name="com.rb.gwthope.server.UserDaoImplTest">
+      <class name="com.rb.gwthope.server.UnitConversionDaoImplTest">
         <methods>
           <include name="unitilsBeforeTestSetUp"/>
           <include name="unitilsAfterTestTearDown"/>
-          <include name="setUp"/>
-          <include name="testFindById"/>
           <include name="unitilsBeforeClass"/>
+          <include name="getAllUnitConversions"/>
         </methods>
       </class>
     </classes>

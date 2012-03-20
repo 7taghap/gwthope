@@ -18,7 +18,7 @@ import org.unitils.spring.annotation.SpringBean;
 import org.unitils.spring.annotation.SpringBeanByName;
 
 import com.rb.gwthope.server.dao.UserDao;
-import com.rb.gwthope.server.dao.UserDaoImpl;
+import com.rb.gwthope.server.dao.impl.UserDaoImpl;
 import com.rb.gwthope.shared.dto.User;
 
 //@DataSet("TagManagerTest.xml")

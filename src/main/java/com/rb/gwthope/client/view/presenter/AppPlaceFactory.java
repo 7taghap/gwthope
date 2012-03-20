@@ -4,8 +4,8 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.rb.gwthope.client.place.ContactPlace;
 import com.rb.gwthope.client.place.EditContactPlace;
-import com.rb.gwthope.client.place.MenuPlace;
 import com.rb.gwthope.client.place.NewContactPlace;
+import com.rb.gwthope.client.place.ProductPlace;
 
 /**
  * 
@@ -26,7 +26,8 @@ public class AppPlaceFactory {
 	EditContactPlace.Tokenizer editContactPlaceTokenizer;
 	
 	@Inject
-	MenuPlace.Tokenizer menuPlaceTokenizer;
+	ProductPlace.Tokenizer productPlaceTokenizer;
+//	MenuPlace.Tokenizer menuPlaceTokenizer;
 	
 	@Inject
 	Provider<ContactPlace> contactProvider;
@@ -36,7 +37,8 @@ public class AppPlaceFactory {
 	Provider<EditContactPlace> editContactProvider;
 	
 	@Inject
-	Provider<MenuPlace> menuPlace;
+	Provider<ProductPlace> productPlace;
+//	Provider<MenuPlace> menuPlace;
 
 	// contact place
 	public ContactPlace.Tokenizer getContactPlaceTokenizer() {
@@ -67,20 +69,23 @@ public class AppPlaceFactory {
 		return editContactProvider.get();
 	}
 
-	public MenuPlace.Tokenizer getMenuPlaceTokenizer() {
-		return menuPlaceTokenizer;
+	public ProductPlace.Tokenizer getProductPlaceTokenizer() {
+		return productPlaceTokenizer;
 	}
 
-	public void setMenuPlaceTokenizer(MenuPlace.Tokenizer menuPlaceTokenizer) {
-		this.menuPlaceTokenizer = menuPlaceTokenizer;
+	public void setProductPlaceTokenizer(
+			ProductPlace.Tokenizer productPlaceTokenizer) {
+		this.productPlaceTokenizer = productPlaceTokenizer;
 	}
 
-	public MenuPlace getMenuPlace() {
-		return menuPlace.get();
+	public Provider<ProductPlace> getProductPlace() {
+		return productPlace;
 	}
 
-	public void setMenuPlace(Provider<MenuPlace> menuPlace) {
-		this.menuPlace = menuPlace;
+	public void setProductPlace(Provider<ProductPlace> productPlace) {
+		this.productPlace = productPlace;
 	}
+
+
 	
 }

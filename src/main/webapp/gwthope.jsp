@@ -27,7 +27,7 @@
     <!--                                                               -->
     <!-- Consider inlining CSS to reduce the number of requested files -->
     <!--                                                               -->
-    <link type="text/css" rel="stylesheet" href="gwthope.css">
+    <link type="text/css" rel="stylesheet" href="gwthope.css" media="all">
 
     <!--                                           -->
     <!-- Any title is fine                         -->
@@ -69,7 +69,15 @@
 	<hr class="clear" />
 </div>
 
-<div id="wrap"></div>
+<div id="wrap">
+
+
+	<div id="content"></div>
+
+		<div id="sidebar"></div>
+	<hr class="clear" />
+</div>
+
 	
 <div id="footer">
 	<div class="left">

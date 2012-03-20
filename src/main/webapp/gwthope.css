@@ -10,6 +10,10 @@ h1 {
   text-align: center;
 }
 
+.caption-h2 {
+	font-size:15px;
+	color:#0039432;	
+}
 .sendButton {
   display: block;
   font-size: 16pt;
@@ -28,8 +32,16 @@ h1 {
   color: red;
 }
 
-.stackItemMiddleCenterInner {
+.stackItemMiddleCenterInner,.gwt-Label {
 	color:#000000;
+}
+
+.cw-FlexTable td {
+  border: 1px solid #BBBBBB;
+  padding: 3px;
+}
+.cw-FlexTable-buttonPanel td {
+  border: 0px;
 }
 
 /** Set ids using widget.getElement().setId("idOfElement") */
@@ -39,7 +51,7 @@ h1 {
 
 /* Body */
 * {margin:0; padding:0;}
-body {background-color:#000030; background-image: url("images/bodybg.gif") top center repeat-x; color:#eee; font:76% Verdana,Arial,Tahoma,"Trebuchet MS",sans-serif; line-height:1.4em; text-align:center; padding:0;}
+body {background-color:#ffffff; background-image: url("images/bodybg.gif") top center repeat-x; color:#eee; font:76% Verdana,Arial,Tahoma,"Trebuchet MS",sans-serif; line-height:1.4em; text-align:center; padding:0;}
 
 #wrap {width:90%; min-width:750px; background-color:#fff; color:#555; padding:1%; margin:0 auto 0 auto; text-align:left; border:1px solid #555;}
 #top {width:90%; margin:15px auto 15px auto;}
@@ -73,7 +85,7 @@ body {background-color:#000030; background-image: url("images/bodybg.gif") top c
 h2, h3, h4 {margin:0 0 12px; padding-bottom:5px; color:#555; font-weight:700;}
 
 /* Content */
-#content {text-align:left; width:70%; float:right;}
+#content {text-align:left; width:70%; float:right;border:1px solid black;}
 #content h2 {font-size:1.7em; letter-spacing:-1px; clear:left; border-bottom:2px solid #ccc;}
 #content h3 {font-size:1.4em; letter-spacing:-1px; margin-bottom:7px;}
 #content h2 a, #content h3 a {font-weight:700; border:0;}

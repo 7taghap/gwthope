@@ -12,8 +12,6 @@ import com.rb.gwthope.client.QuickStartGinApp;
 
 import com.rb.gwthope.client.view.presenter.GreetingPresenter;
 import com.rb.gwthope.client.view.presenter.MainPresenter;
-import com.rb.gwthope.client.view.presenter.impl.GreetingPresenterImpl;
-import com.rb.gwthope.client.view.presenter.impl.MainPresenterImpl;
 import com.rb.gwthope.client.view.widget.GreetingWidget;
 import com.rb.gwthope.client.view.widget.MainWidget;
 
@@ -26,11 +24,11 @@ public class HopeModule extends AbstractGinModule{
 //		bind(HandlerManager.class).in(Singleton.class);
 		bind(QuickStartGinApp.class).in(Singleton.class);
 		
-		bind (GreetingPresenter.class).to(GreetingPresenterImpl.class);
+//		bind (GreetingPresenter.class).to(GreetingPresenterImpl.class);
 //		bind(GreetingPresenter.Display.class).to(GreetingWidget.class);
 		
-		bind(MainPresenter.class).to(MainPresenterImpl.class);
-		bind(MainPresenter.Display.class).to(MainWidget.class);
+//		bind(MainPresenter.class).to(MainPresenterImpl.class);
+//		bind(MainPresenter.Display.class).to(MainWidget.class);
 		
 		
 		

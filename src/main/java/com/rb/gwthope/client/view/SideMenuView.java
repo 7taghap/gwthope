@@ -29,18 +29,35 @@ import com.google.gwt.user.client.ui.Tree;
 import com.google.gwt.user.client.ui.TreeItem;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.rb.gwthope.client.activity.MenuActivity.IMenuViewDisplay;
+import com.google.inject.Inject;
+import com.rb.gwthope.client.gin.ContactsGinjector;
+import com.rb.gwthope.client.place.ContactPlace;
+import com.rb.gwthope.client.view.presenter.AppPlaceFactory;
 
 
-public class SideMenuView extends Composite implements IMenuViewDisplay{
+public class SideMenuView extends Composite{
 
-	public SideMenuView() {
+	AppPlaceFactory factory;
+//	ContactPlace contactPlace;
+	
+	public SideMenuView(AppPlaceFactory applace) {
+		this.factory = applace;
 		initWidget(this.onInitialize());
 	}
-	public Hyperlink hypHome = new Hyperlink("Home","home");
-	public Hyperlink hypProduct = new Hyperlink("Product","product");
+	
+	public SideMenuView() {
+//		this.factory = applace;
+		initWidget(this.onInitialize());
+	}
+	
+//	
+//	public void init(ContactPlace factory) {
+//		this.contactPlace = factory;
+//	}
+	public Hyperlink hypHome = new Hyperlink("Home","list:");
+	public Hyperlink hypProduct = new Hyperlink("Product","product:");
 	public VerticalPanel homePanel = new VerticalPanel();
-	public VerticalPanel simplesearchPanel = new VerticalPanel();
+	public VerticalPanel productPanel = new VerticalPanel();
 	public VerticalPanel advancedsearchPanel = new VerticalPanel();
 	public VerticalPanel orderentryPanel = new VerticalPanel();
 	public VerticalPanel worklistPanel = new VerticalPanel();
@@ -54,10 +71,10 @@ public class SideMenuView extends Composite implements IMenuViewDisplay{
 		    panel1.add(achor1);
 		    homePanel.add(createMailItem());
 //		    homePanel.add(new Label("Create"));
-		    simplesearchPanel.add(this.createFiltersItem());
+		    productPanel.add(this.createFiltersItem());
 		    homePanel.add(hypProduct);
 		    stackPanel.add(homePanel,getHeaderString(hypHome),true);
-		    stackPanel.add(simplesearchPanel,"Product",true);
+		    stackPanel.add(productPanel,"Product",true);
 		    return stackPanel;
 	}
 	
@@ -77,7 +94,7 @@ private VerticalPanel createFiltersItem() {
     String[] links = {"create","update","delete"};
     for (int x=0; x < links.length; x++ ){
 //    	Hyperlink link = 
-    	filtersPanel.add(new Hyperlink(links[x],links[x]));
+    	filtersPanel.add(new Hyperlink(links[x],"prod"+links[x]));
     }	
     return filtersPanel;
   }

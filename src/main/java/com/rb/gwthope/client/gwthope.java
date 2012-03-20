@@ -5,11 +5,10 @@ import com.rb.gwthope.client.event.GreetingEventHandler;
 import com.rb.gwthope.client.gin.ContactsGinjector;
 import com.rb.gwthope.client.gin.HopeInjector;
 import com.rb.gwthope.client.place.ContactPlace;
-import com.rb.gwthope.client.place.MenuPlace;
+import com.rb.gwthope.client.view.SideMenuView;
 import com.rb.gwthope.client.view.presenter.AppPlaceFactory;
 import com.rb.gwthope.client.view.presenter.AppPlaceHistoryMapper;
-import com.rb.gwthope.client.view.presenter.GreetingPresenter;
-import com.rb.gwthope.client.view.presenter.MainPresenter;
+
 import com.rb.gwthope.shared.FieldVerifier;
 import com.rb.gwthope.shared.dto.User;
 import com.rb.gwthope.shared.services.GreetingService;
@@ -73,7 +72,7 @@ public class gwthope implements EntryPoint {
 	
 	private com.rb.gwthope.client.gin.ContactsGinjector injector = GWT.create(ContactsGinjector.class);
   public void onModuleLoad() {
-	  simplePresenter();
+	  ContactClientFactory();
   }
   private void ContactClientFactory() {
 		EventBus eventBus = injector.getEventBus();
@@ -85,23 +84,20 @@ public class gwthope implements EntryPoint {
 
 		AppPlaceFactory factory = injector.getAppPlaceFactory();
 		ContactPlace defaultPlace = factory.getContactPlace();
-		MenuPlace menuPlace = factory.getMenuPlace();
+//		MenuPlace menuPlace = factory.getMenuPlace();
 		AppPlaceHistoryMapper historyMapper = GWT.create(AppPlaceHistoryMapper.class);
 		historyMapper.setFactory(factory);
 		
 		PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);
-		historyHandler.register(placeController, eventBus, menuPlace);
-		
-		RootPanel.get("wrap").add(appWidget);
+		historyHandler.register(placeController, eventBus, defaultPlace);
+		System.out.println(factory.getContactPlace().getPlaceName());
+		RootPanel.get("sidebar").add(new SideMenuView());
+		RootPanel.get("content").add(appWidget);
 		
 		historyHandler.handleCurrentHistory();
+		logEvent(eventBus);
   }
-  private void injectorImpl() {
-	  HopeInjector injector = GWT.create(HopeInjector.class);
-	  MainPresenter mainPresenter = injector.getMainPresenter();
-	  mainPresenter.bind();
-	  RootPanel.get().add(mainPresenter.getDisplay().asWidget());
-  }
+  
   
   private void simplePresenter() {
 	  HandlerManager eventBus = new HandlerManager(null);
@@ -110,18 +106,18 @@ public class gwthope implements EntryPoint {
   }
   
   
-//  private void logEvent(CustomEventBus eventBus) {
+  private void logEvent(EventBus eventBus) {
 //	  Window.alert(eventBus.getHandlerCount(GreetingEvent.TYPE)+"");
-////	  eventBus.
-//	  eventBus.addHandler(GreetingEvent.TYPE,new GreetingEventHandler() {
-//		
-//		public void onGetName(GreetingEvent event) {
-//			Window.alert(event.toDebugString());
-//			GWT.log(event.toDebugString(), null);
-//			
-//		}
-//	});
-//  }
+//	  eventBus.
+	  eventBus.addHandler(GreetingEvent.TYPE,new GreetingEventHandler() {
+		
+		public void onGetName(GreetingEvent event) {
+			Window.alert(event.toDebugString());
+			GWT.log(event.toDebugString(), null);
+			
+		}
+	});
+  }
 
   public void greetingSample() {
     final Button sendButton = new Button( messages.sendButton() );

@@ -3,6 +3,7 @@ package com.rb.gwthope.server;
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.inject.Inject;
@@ -17,19 +18,15 @@ import com.rb.gwthope.shared.services.ProductService;
 public class ProductServiceImpl implements ProductService {
 	private static final Logger logger =Logger.getLogger(ProductServiceImpl.class);
 	
-	@Inject
+	@Autowired
 	UnitConversionDao unitConversionDao;
 	
-	@Inject
+	@Autowired
 	UserDao userDao;
 
 	@Override
 	public ArrayList<UnitConversion> getDefaultUnits() {
-		// TODO Auto-generated method stub
-		User user = userDao.findById(1);
-		logger.info(user.getFullname());
-		ArrayList<UnitConversion> unitConversions = new ArrayList<UnitConversion>();
-		return unitConversions =(ArrayList)unitConversionDao.getAllUnitConversion();
+		return (ArrayList<UnitConversion> )unitConversionDao.getAllUnitConversion();
 		
 	}
 

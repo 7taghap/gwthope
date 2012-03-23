@@ -38,7 +38,8 @@ public class AppPlaceFactory {
 	
 	@Inject
 	Provider<ProductPlace> productPlace;
-//	Provider<MenuPlace> menuPlace;
+	
+
 
 	// contact place
 	public ContactPlace.Tokenizer getContactPlaceTokenizer() {
@@ -86,6 +87,6 @@ public class AppPlaceFactory {
 		this.productPlace = productPlace;
 	}
 
-
+	
 	
 }

@@ -12,6 +12,7 @@ import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.AcceptsOneWidget;
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -47,6 +48,7 @@ public class ContactActivity extends AbstractActivity {
 
 		List<Integer> getSelectedRows();
 
+		
 		Widget asWidget();
 	}
 

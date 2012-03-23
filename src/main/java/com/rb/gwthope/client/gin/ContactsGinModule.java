@@ -9,12 +9,15 @@ import com.google.gwt.place.shared.PlaceController;
 import com.google.inject.Singleton;
 import com.rb.gwthope.client.activity.ContactActivity.IContactsViewDisplay;
 import com.rb.gwthope.client.activity.EditContactActivity.IEditDisplay;
+import com.rb.gwthope.client.activity.ProductActivity.IProductDetailViewDisplay;
 import com.rb.gwthope.client.activity.ProductActivity.IProductViewDisplay;
 import com.rb.gwthope.client.view.CreateProductView;
+import com.rb.gwthope.client.view.ProductDetailBox;
 import com.rb.gwthope.client.view.ProductView;
 import com.rb.gwthope.client.view.SideMenuView;
 import com.rb.gwthope.client.view.presenter.AppActivityMapper;
 import com.rb.gwthope.client.view.presenter.AppPlaceFactory;
+import com.rb.gwthope.client.view.presenter.SimpleGreetingPresenter;
 import com.rb.gwthope.client.view.widget.ContactsView;
 import com.rb.gwthope.client.view.widget.EditContactView;
 
@@ -45,7 +48,9 @@ public class ContactsGinModule extends AbstractGinModule {
 		//my added code
 //		bind(IMenuViewDisplay.class).to(SideMenuView.class);
 		bind(IProductViewDisplay.class).to(CreateProductView.class);
-		
+		bind(IProductDetailViewDisplay.class).to(ProductDetailBox.class).in(Singleton.class);
+//		bind(ProductDetailActivity.class).in(IProductDetailViewDisplay.class);
+//		bind(ProductDetailBox.class).in(ProductDetailActivity.class);
 	}
 	
 	/**

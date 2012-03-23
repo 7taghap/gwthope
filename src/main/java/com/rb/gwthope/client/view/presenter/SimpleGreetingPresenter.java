@@ -5,8 +5,10 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.dom.client.HasFocusHandlers;
 import com.google.gwt.event.shared.HandlerManager;
+import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 import com.rb.gwthope.client.event.GreetingEvent;
 
 public class SimpleGreetingPresenter implements SimplePresenter{
@@ -21,6 +23,7 @@ public class SimpleGreetingPresenter implements SimplePresenter{
 	 private final HandlerManager eventBus;
 	 private final Display display;
 	 
+	
 	 public SimpleGreetingPresenter(HandlerManager eventBus,Display view) {
 		 this.eventBus =eventBus;
 		 this.display = view;

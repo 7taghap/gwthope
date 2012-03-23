@@ -2,7 +2,6 @@ package com.rb.gwthope.shared.dto;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -33,10 +32,10 @@ public class ProductDtl implements Serializable {
 	@Column(name="last_updated_date")
 	private Date lastUpdatedDate;
 
-	private BigDecimal price;
+	private double price;
 
 	@Column(name="price_type")
-	private short priceType;
+	private int priceType;
 
 	@Column(name="qty_on_hand")
 	private float qtyOnHand;
@@ -44,10 +43,10 @@ public class ProductDtl implements Serializable {
 	@Column(name="selling_qty")
 	private float sellingQty;
 
-	private short status;
+	private int status;
 
 	@Column(name="sug_price")
-	private BigDecimal sugPrice;
+	private double sugPrice;
 
 	//bi-directional many-to-one association to UnitConversion
     @ManyToOne
@@ -102,19 +101,19 @@ public class ProductDtl implements Serializable {
 		this.lastUpdatedDate = lastUpdatedDate;
 	}
 
-	public BigDecimal getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
-	public short getPriceType() {
+	public int getPriceType() {
 		return this.priceType;
 	}
 
-	public void setPriceType(short priceType) {
+	public void setPriceType(int priceType) {
 		this.priceType = priceType;
 	}
 
@@ -134,19 +133,19 @@ public class ProductDtl implements Serializable {
 		this.sellingQty = sellingQty;
 	}
 
-	public short getStatus() {
+	public int getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(short status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
-	public BigDecimal getSugPrice() {
+	public double getSugPrice() {
 		return this.sugPrice;
 	}
 
-	public void setSugPrice(BigDecimal sugPrice) {
+	public void setSugPrice(double sugPrice) {
 		this.sugPrice = sugPrice;
 	}
 

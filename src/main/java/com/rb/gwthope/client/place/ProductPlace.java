@@ -15,6 +15,7 @@ public class ProductPlace extends ActivityPlace<ProductActivity> {
 		// TODO Auto-generated constructor stub
 	}
 	
+		
 	@Prefix("product")
 	public static class Tokenizer implements PlaceTokenizer<ProductPlace> {
 

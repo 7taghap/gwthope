@@ -1,5 +1,6 @@
 package com.rb.gwthope.client.view.widget;
 
+import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.ui.Composite;
 
 import com.google.gwt.user.client.ui.Button;
@@ -45,6 +46,24 @@ public class MainWidget extends Composite implements Display{
 		removeContent();
 		content = display.asWidget();
 		dockPanel.add(display.asWidget(),DockPanel.CENTER);
+		
+	}
+
+//	@Override
+	public HasClickHandlers getSaveButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	@Override
+	public HasClickHandlers getCancelButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+//	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
 		
 	}
 

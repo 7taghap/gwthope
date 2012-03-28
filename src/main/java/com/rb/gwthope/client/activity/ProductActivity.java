@@ -24,7 +24,8 @@ import com.rb.gwthope.shared.services.ProductServiceAsync;
 public class ProductActivity extends AbstractActivity {
 
 	public interface IProductViewDisplay  extends Display{
-			
+		HasClickHandlers getSaveButton();
+		HasClickHandlers getCancelButton();			
 		HasClickHandlers getAddProductDetailsButton();
 		HasClickHandlers getDeletProductDetailButton();
 		HasClickHandlers getProductDetailsTable();
@@ -38,7 +39,8 @@ public class ProductActivity extends AbstractActivity {
 	
 	//interface for product details popup
 	public interface IProductDetailViewDisplay  extends Display{
-	
+		HasClickHandlers getSaveButton();
+		HasClickHandlers getCancelButton();
 		void setDefaultUnit(List<UnitConversion> units);
 		ProductDtl getProductDetail();
 		void close();

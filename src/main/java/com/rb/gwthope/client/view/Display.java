@@ -5,8 +5,8 @@ import com.google.gwt.user.client.ui.Widget;
 
 public interface Display {
 
-	HasClickHandlers getSaveButton();
-	HasClickHandlers getCancelButton();
+//	HasClickHandlers getSaveButton();
+//	HasClickHandlers getCancelButton();
 	void clear();
 	Widget asWidget();
 

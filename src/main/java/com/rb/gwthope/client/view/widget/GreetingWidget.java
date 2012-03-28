@@ -80,4 +80,20 @@ public class GreetingWidget extends Composite implements
 		return nameField;
 	}
 
+	public HasClickHandlers getSaveButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public HasClickHandlers getCancelButton() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void clear() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

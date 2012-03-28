@@ -2,7 +2,6 @@ package com.rb.gwthope.server;
 
 import org.springframework.stereotype.Service;
 
-import com.rb.gwthope.client.GreetingService;
 import com.rb.gwthope.shared.FieldVerifier;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
@@ -12,7 +11,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 @SuppressWarnings("serial")
 @Service("greetingService")
 public class GreetingServiceImpl implements
-    GreetingService {
+    com.rb.gwthope.shared.services.GreetingService {
 
   public String greetServer(String input) throws IllegalArgumentException {
     // Verify that the input is valid.

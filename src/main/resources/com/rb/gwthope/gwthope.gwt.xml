@@ -2,11 +2,10 @@
 <module rename-to='gwthope'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User' />
-
   <!-- We need the JUnit module in the main module,               -->
   <!-- otherwise eclipse complains (Google plugin bug?)           -->
   <inherits name='com.google.gwt.junit.JUnit' />
-
+  <inherits name="com.google.gwt.inject.Inject" />
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
   <!-- any one of the following lines.                            -->
@@ -15,7 +14,8 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
-
+  <inherits name="com.google.gwt.activity.Activity"/>
+  <inherits name="com.google.gwt.place.Place"/>
   <!-- Specify the app entry point class.                         -->
   <entry-point class='com.rb.gwthope.client.gwthope' />
 

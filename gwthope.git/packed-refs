@@ -1,0 +1,8 @@
+# pack-refs with: peeled 
+d0200aea8216f241e06fa4c39d46f4ad471b9e1e refs/heads/basic_mvp
+33ab77d9ee877d5f7e36491d1cba321a70246ac8 refs/heads/master
+6fbeda7256f2abf74d4cb87105d76a3170595046 refs/heads/mvp_contact_sample
+f587406c891e0f43325926d7134cdec03ffc0100 refs/heads/no_persistance
+a0cbda7d71fdffd44a8d65ca37828a3d731e4023 refs/heads/with_persistence
+a0cbda7d71fdffd44a8d65ca37828a3d731e4023 refs/tags/palpak_mvp
+8e0e3bc89ac09d5de29351a7c39acc68972def09 refs/tags/persistence_jta

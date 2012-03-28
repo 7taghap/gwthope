@@ -4,5 +4,5 @@ import com.rb.gwthope.shared.dto.User;
 
 public interface UserDao {
 
-	public User findById(Long userId);
+	public User findById(int userId);
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+
+<!--     <bean id="dataSource" class="org.unitils.database.UnitilsDataSource" /> -->
+
+
+    		
+  <bean id="userDao" class="com.rb.gwthope.server.dao.impl.UserDaoImpl">
+        <property name="entityManager" ref="entityManagerFactory"/>
+    </bean>
+  <bean id="unitConversionDao" class="com.rb.gwthope.server.dao.impl.UnitConversionDaoImpl">
+        <property name="entityManager" ref="entityManagerFactory"/>
+    </bean>
+    
+</beans>

@@ -9,7 +9,7 @@ import com.rb.gwthope.shared.dto.User;
 @RemoteServiceRelativePath("springGwtServices/userService")
 public interface UserService extends RemoteService{
 
-	public String findUser(Long userId);
+	public String findUser(Integer userId);
 //	public List<User> findAll();
 //	public boolean saveUser(User user) throws Exception;
 }

@@ -39,7 +39,7 @@
 
   <!-- Default page to serve -->
   <welcome-file-list>	
-    <welcome-file>gwthope.html</welcome-file>
+    <welcome-file>gwthope.jsp</welcome-file>
   </welcome-file-list>
 
 </web-app>

@@ -3,9 +3,13 @@ package com.rb.gwthope.shared.dto;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Set;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+import com.google.gwt.junit.JUnitShell.Strategy;
 import com.rb.gwthope.server.constants.MyNamedQueries;
 
 /**
@@ -22,6 +26,7 @@ public class UnitConversion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 
 	private String abbr;

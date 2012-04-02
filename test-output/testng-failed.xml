@@ -1,15 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="5" skipfailedinvocationCounts="false" verbose="1" name="Failed suite [gwthope]" junit="false" parallel="false" annotations="JDK">
-  <test name="com.rb.gwthope.server.UnitConversionDaoImplTest(failed)" junit="false" parallel="false" annotations="JDK">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.rb.gwthope.server.UnitConversionDaoImplTest">
+      <class name="com.rb.gwthope.server.ProductCategoryDaoImplTest">
         <methods>
-          <include name="unitilsBeforeTestSetUp"/>
-          <include name="unitilsAfterTestTearDown"/>
           <include name="unitilsBeforeClass"/>
-          <include name="getAllUnitConversions"/>
+          <include name="unitilsAfterTestTearDown"/>
+          <include name="unitilsBeforeTestSetUp"/>
+          <include name="setUp"/>
+          <include name="findAll"/>
         </methods>
-      </class>
+      </class> <!-- com.rb.gwthope.server.ProductCategoryDaoImplTest -->
     </classes>
-  </test>
-</suite>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

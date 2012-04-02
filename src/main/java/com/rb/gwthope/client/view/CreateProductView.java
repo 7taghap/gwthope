@@ -3,6 +3,8 @@ package com.rb.gwthope.client.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.transaction.config.TxNamespaceHandler;
+
 import com.google.gwt.event.dom.client.HasClickHandlers;
 
 import com.google.gwt.user.client.ui.Button;
@@ -21,7 +23,10 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.rb.gwthope.client.activity.ProductActivity.IProductViewDisplay;
 import com.rb.gwthope.client.view.widget.MyFlexTable;
+import com.rb.gwthope.shared.dto.Product;
+import com.rb.gwthope.shared.dto.ProductCategory;
 import com.rb.gwthope.shared.dto.UnitConversion;
+import com.rb.gwthope.shared.util.InputFormatter;
 
 public class CreateProductView extends Composite implements IProductViewDisplay {
 	private final TextBox productId;
@@ -30,7 +35,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 	private final TextBox shelf;
 	private final TextBox totalQtyOnHand;
 	private final ListBox defaultUnitType;
-	
+	private final ListBox lstCategory;
 
 	private final FileUpload fileUpload;
 	
@@ -42,6 +47,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 	private final Label lblDefaultUnitType;
 	private final Label lblImage;
 	private final Label lblProductDetails;
+	private final Label lblCategory;
 
 	private final FlexTable detailsTable;
 	private final MyFlexTable productDetails;
@@ -50,6 +56,9 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 	private final Button addDetailButton;
 	private final Button deleteDetailButton;
 	private final List<String> detailHeader;
+	
+	Product product;
+	boolean hasErrors;
 
 	public CreateProductView() {
 		DecoratorPanel contentDetailsDecorator = new DecoratorPanel();
@@ -63,6 +72,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		lblProductName = new Label("Product Name");
 		lblProductDesc =new Label("Product Desc");
 		lblShelf = new Label("Shelf");
+		lblCategory = new Label("Category");
 		lblTotalQtyOnHand =  new Label("Total Qty on Hand");
 		lblDefaultUnitType = new Label("Default Unit");
 		lblImage = new Label("Image");
@@ -80,6 +90,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		productDesc = new TextBox();
 		shelf = new TextBox();
 		defaultUnitType = new ListBox();
+		lstCategory = new ListBox();
 		totalQtyOnHand = new TextBox();
 		fileUpload = new FileUpload();
 		
@@ -114,7 +125,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 	}
 
 	private void initDetailsTable() {
-		
+		HorizontalPanel menuPanel = new HorizontalPanel();
 		FlexCellFormatter cellFormatter = detailsTable.getFlexCellFormatter();
 		detailsTable.setWidget(0, 0, lblProductId);
 		detailsTable.setWidget(0, 1, productId);
@@ -125,15 +136,21 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		detailsTable.setWidget(3, 0, lblDefaultUnitType);
 		detailsTable.setWidget(3, 1, defaultUnitType);
 		// 2nd column
-		detailsTable.setWidget(0, 2,lblTotalQtyOnHand);
-		detailsTable.setWidget(0, 3, totalQtyOnHand);
-		detailsTable.setWidget(1, 2,lblShelf);
-		detailsTable.setWidget(1, 3, shelf);
-		detailsTable.setWidget(2, 2,lblImage );
-		detailsTable.setWidget(2, 3, fileUpload);
+		detailsTable.setWidget(0, 2,lblCategory);
+		detailsTable.setWidget(0, 3, lstCategory);
+		detailsTable.setWidget(1, 2,lblTotalQtyOnHand);
+		detailsTable.setWidget(1, 3, totalQtyOnHand);
+		detailsTable.setWidget(2, 2,lblShelf);
+		detailsTable.setWidget(2, 3, shelf);
+		detailsTable.setWidget(3, 2,lblImage );
+		detailsTable.setWidget(3, 3, fileUpload);
+		//product details
 		detailsTable.setWidget(5, 0, lblProductDetails);
 		detailsTable.setWidget(6, 0, productDetails);
-		detailsTable.setWidget(5, 2, addDetailButton);
+		menuPanel.add(addDetailButton);
+		menuPanel.add(deleteDetailButton);
+		detailsTable.setWidget(5, 2, menuPanel);
+//		detailsTable.setWidget(5,3, deleteDetailButton);
 		cellFormatter.setColSpan(6, 0, 4);
 		lblProductDetails.setStyleName("caption-h2", true);
 		// detailsTable.a
@@ -200,7 +217,52 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		productDesc.setText("");
 		shelf.setText("");
 		totalQtyOnHand.setText("");
-		productDetails.removeAllRows();
+		if (productDetails.getRowCount() > 1) {
+			for (int x = 1; x < productDetails.getRowCount(); x++) {
+				productDetails.removeRow(x);
+			}
+		}
+		
+	}
+
+	@Override
+	public void validate() {
+		hasErrors = false;
+		if (productName.getText().trim().length() < 1) {
+			productName.setStyleName("error");
+			hasErrors = true;
+		}
+		
+	}
+
+	@Override
+	public boolean hasErrors() {
+
+		return hasErrors;
+	}
+
+	@Override
+	public Product getProduct() {
+		InputFormatter formatter = new InputFormatter();
+		Product product = new Product();
+		ProductCategory category = new ProductCategory();
+		category.setProductCategoryId(formatter.toInt(lstCategory.getValue(lstCategory.getSelectedIndex())));
+		category.setCategoryName(lstCategory.getItemText(lstCategory.getSelectedIndex()));
+		product.setCategory(category);
+		product.setProductDesc(productDesc.getText());
+		product.setProductName(productName.getText());
+		product.setShelf(shelf.getText());
+		product.setTotalQtyOnHand(formatter.toFloat(totalQtyOnHand.getText()));
+//		product.set
+		return product;
+	}
+
+	@Override
+	public void setCategoryList(List<ProductCategory> productCategories) {
+		for(ProductCategory category : productCategories) {
+			lstCategory.addItem(category.getCategoryName(), category.getProductCategoryId()+"");
+		}
+		
 	}
 	
 	

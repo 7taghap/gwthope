@@ -2,6 +2,9 @@ package com.rb.gwthope.shared.dto;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.rb.gwthope.server.constants.MyNamedQueries;
+
 import java.util.Date;
 import java.util.Set;
 
@@ -12,14 +15,21 @@ import java.util.Set;
  */
 @Entity
 @Table(name="product")
+@NamedQueries({
+		@NamedQuery(name=MyNamedQueries.PRODUCT_FIND_BY_CATEGORY,
+		query="select o from Product o where LOWER(o.category.categoryName) = LOWER(:"+MyNamedQueries.SEARCH_NAME+")" ),
+		@NamedQuery(name=MyNamedQueries.PRODUCT_FIND_BY_NAME,
+		query="select o from Product o where o.productName like '%"+MyNamedQueries.SEARCH_NAME+"%'")
+})
 public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="product_id")
-	private String productId;
+	private int productId;
 
-	private short category;
+	@OneToOne
+	private ProductCategory category;
 
 	@Column(name="created_by")
 	private String createdBy;
@@ -37,7 +47,7 @@ public class Product implements Serializable {
 	private String productName;
 
 	@Column(name="product_type")
-	private short productType;
+	private int productType;
 
 	private String shelf;
 
@@ -63,19 +73,19 @@ public class Product implements Serializable {
     public Product() {
     }
 
-	public String getProductId() {
+	public int getProductId() {
 		return this.productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(int productId) {
 		this.productId = productId;
 	}
 
-	public short getCategory() {
+	public ProductCategory getCategory() {
 		return this.category;
 	}
 
-	public void setCategory(short category) {
+	public void setCategory(ProductCategory category) {
 		this.category = category;
 	}
 
@@ -119,11 +129,11 @@ public class Product implements Serializable {
 		this.productName = productName;
 	}
 
-	public short getProductType() {
+	public int getProductType() {
 		return this.productType;
 	}
 
-	public void setProductType(short productType) {
+	public void setProductType(int productType) {
 		this.productType = productType;
 	}
 

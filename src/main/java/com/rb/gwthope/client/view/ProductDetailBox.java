@@ -25,6 +25,7 @@ import com.rb.gwthope.client.activity.ProductActivity.IProductViewDisplay;
 
 import com.rb.gwthope.shared.dto.ProductDtl;
 import com.rb.gwthope.shared.dto.UnitConversion;
+import com.rb.gwthope.shared.util.InputFormatter;
 
 public class ProductDetailBox extends DialogBox implements IProductDetailViewDisplay {
 //	 final DialogBox dialogBox;
@@ -50,6 +51,8 @@ public class ProductDetailBox extends DialogBox implements IProductDetailViewDis
 	//button
 	 final Button btnSave;
 	 final Button btnCancel;
+	 
+	 boolean hasErrors=false;
 
 	public ProductDetailBox() {
 		super();
@@ -71,7 +74,7 @@ public class ProductDetailBox extends DialogBox implements IProductDetailViewDis
 		
 		this.lstUnit = new ListBox();
 		
-		btnSave = new Button("Save");
+		btnSave = new Button("Add");
 		btnCancel = new Button("Cancel");
 		
 		initContentTable();
@@ -94,19 +97,19 @@ public class ProductDetailBox extends DialogBox implements IProductDetailViewDis
 	    buttonPanel.add(btnSave);
 	    
 	    buttonPanel.add(btnCancel);
-		content.setWidget(0,0, lblProductId);
-		content.setWidget(0,1,txtProductDtlId);
-		content.setWidget(1,0,txtProductDtlId);
-		content.setWidget(2,0,lblUnitType);
-		content.setWidget(2,1,lstUnit);
-		content.setWidget(3,0,lblSellingQty);
-		content.setWidget(3,1,txtSellingQty);
-		content.setWidget(4,0,lblPrice);
-		content.setWidget(4,1,txtPrice);
-		content.setWidget(5,0,lblQtyOnHand);
-		content.setWidget(5,1,txtQtyOnHand);
-		content.setWidget(6,0,lblPriceType);
-		content.setWidget(6,1,lstPriceType);
+//		
+		content.setWidget(1,0,lblUnitType);
+		content.setWidget(1,1,lstUnit);
+		content.setWidget(2,0,lblSellingQty);
+		content.setWidget(2,1,txtSellingQty);
+		content.setWidget(3,0,lblPrice);
+		content.setWidget(3,1,txtPrice);
+		content.setWidget(4,0,lblQtyOnHand);
+		content.setWidget(4,1,txtQtyOnHand);
+		content.setWidget(5,0,lblPriceType);
+		content.setWidget(5,1,lstPriceType);
+		content.setWidget(6, 0, lblSugPrice);
+		content.setWidget(6,1,txtSugPrice);
 		
 		content.setWidget(7,0,buttonPanel);
 		
@@ -154,15 +157,16 @@ public class ProductDetailBox extends DialogBox implements IProductDetailViewDis
 	 * @return
 	 */
 	private ProductDtl addProductDtl() {
+		InputFormatter formatter = new InputFormatter();
 		ProductDtl dtl = new ProductDtl();
 		UnitConversion unit = new UnitConversion();
-		unit.setId(Integer.parseInt(lstUnit.getValue(lstUnit.getSelectedIndex())));
+		unit.setId(formatter.toInt(lstUnit.getValue(lstUnit.getSelectedIndex())));
 		unit.setName(lstUnit.getItemText(lstUnit.getSelectedIndex()));
 		dtl.setUnitConversion(unit);
-		dtl.setSellingQty(Float.parseFloat(txtSellingQty.getText()));
-		dtl.setPrice(Double.parseDouble(txtPrice.getText()));
-		dtl.setQtyOnHand(Float.parseFloat(txtQtyOnHand.getText()));
-//		dtl.setSugPrice(Double.parseDouble(txtSugPrice.getText()));
+		dtl.setSellingQty(formatter.toFloat(txtSellingQty.getText()));
+		dtl.setPrice(formatter.toDouble(txtPrice.getText()));
+		dtl.setQtyOnHand(formatter.toFloat(txtQtyOnHand.getText()));
+		dtl.setSugPrice(formatter.toDouble(txtSugPrice.getText()));
 //		dtlsForSubmit.add(dtl);
 		return dtl;
 		
@@ -196,6 +200,24 @@ public class ProductDetailBox extends DialogBox implements IProductDetailViewDis
 		return null;
 	}
 	
+	public void validate() {
+		hasErrors = false;
+		if (txtSellingQty.getText().trim().length() < 1) {
+			txtSellingQty.setStyleName("error");
+			hasErrors = true;
+		}
+		if (txtPrice.getText().trim().length() < 1) {
+			txtPrice.setStyleName("error");
+			hasErrors = true;
+		}
+
+	}
+
+	@Override
+	public boolean hasErrors() {
+		// TODO Auto-generated method stub
+		return hasErrors;
+	}
 	
 	
 }

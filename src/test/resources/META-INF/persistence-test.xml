@@ -11,6 +11,7 @@
   <class>com.rb.gwthope.shared.dto.Product</class>
   <class>com.rb.gwthope.shared.dto.ProductDtl</class>
     <class>com.rb.gwthope.shared.dto.UnitType</class>
+        <class>com.rb.gwthope.shared.dto.ProductCategory</class>
   <exclude-unlisted-classes>true</exclude-unlisted-classes>
   <properties>
    <property name="hibernate.hbm2ddl.auto" value="auto" />

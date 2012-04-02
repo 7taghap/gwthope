@@ -67,4 +67,16 @@ public class MainWidget extends Composite implements Display{
 		
 	}
 
+	@Override
+	public void validate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean hasErrors() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -31,19 +31,26 @@ public class UnitConversionDaoImpl extends
 
 	@Override
 	public UnitConversion saveUnitConversion(UnitConversion unitConversion) {
-		// TODO Auto-generated method stub
-		return null;
+		if (unitConversion.getId() > 0) {
+			update(unitConversion);
+		}
+		else {
+			save(unitConversion);
+			
+		}
+		return unitConversion;
 	}
 
 	@Override
 	public UnitConversion findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return findById(id);
 	}
 
 	@Override
 	public boolean deleteUnitConversion(int id) {
-		// TODO Auto-generated method stub
+		
+
 		return false;
 	}
 

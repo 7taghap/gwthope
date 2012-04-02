@@ -13,6 +13,7 @@ import com.rb.gwthope.client.activity.ProductActivity.IProductDetailViewDisplay;
 import com.rb.gwthope.client.activity.ProductActivity.IProductViewDisplay;
 import com.rb.gwthope.client.view.CreateProductView;
 import com.rb.gwthope.client.view.ProductDetailBox;
+import com.rb.gwthope.client.view.ProductForm;
 import com.rb.gwthope.client.view.ProductView;
 import com.rb.gwthope.client.view.SideMenuView;
 import com.rb.gwthope.client.view.presenter.AppActivityMapper;

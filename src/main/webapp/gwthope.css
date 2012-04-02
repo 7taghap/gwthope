@@ -18,7 +18,9 @@ h1 {
   display: block;
   font-size: 16pt;
 }
-
+.selected {
+	backgroud-color:#003922;
+}
 /** Most GWT widgets already have a style name defined */
 .gwt-DialogBox {
   width: 400px;
@@ -48,6 +50,14 @@ h1 {
 #closeButton {
   margin: 15px 6px 6px;
 }
+
+/** errors **/
+
+.error{ 
+	border:1px solid red;
+}
+
+
 
 /* Body */
 * {margin:0; padding:0;}

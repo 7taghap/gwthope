@@ -1,5 +1,6 @@
 package com.rb.gwthope.server;
 
+import java.util.Date;
 import java.util.logging.Logger;
 
 import javax.persistence.EntityManager;
@@ -39,13 +40,25 @@ public class UserDaoImplTest extends UnitilsTestNG {
     	Assert.assertNotNull(userDao);
     }
   
-    @Test
+    @Test(enabled=false)
     public void testFindById() {
     	logger.info("enityt manager :" + entityManager);
     	Assert.assertNotNull(userDao);
        User users =userDao.findById(1);
        logger.info(users.toString());
 //        assertPropertyLenientEquals("firstName", Arrays.asList("John", "Jane"), users);
+    }
+    @Test
+    public void insertUser() {
+    	User user = new User();
+    	user.setUsername("admin");
+    	user.setFullname("Rey Bryan");
+    	user.setPassword("helloworld");
+    	user.setStatus(1);
+//    	user.set
+    	user.setCreatedDate(new Date());
+    	user.setUpdateDate(new Date());
+    	
     }
 
 }

@@ -10,6 +10,7 @@ import com.google.inject.Inject;
 import com.rb.gwthope.server.dao.UnitConversionDao;
 import com.rb.gwthope.server.dao.UserDao;
 import com.rb.gwthope.shared.dto.Product;
+import com.rb.gwthope.shared.dto.ProductCategory;
 import com.rb.gwthope.shared.dto.UnitConversion;
 import com.rb.gwthope.shared.dto.User;
 import com.rb.gwthope.shared.services.ProductService;
@@ -38,6 +39,12 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product getProduct(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<ProductCategory> getCategories() {
 		// TODO Auto-generated method stub
 		return null;
 	}

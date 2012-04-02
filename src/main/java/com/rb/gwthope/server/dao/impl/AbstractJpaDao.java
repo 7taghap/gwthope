@@ -20,6 +20,7 @@ public abstract class AbstractJpaDao< K,T extends Serializable > {
 	   public T findOne( final K id ){
 	      return entityManager.find( clazz, id );
 	   }
+	   
 	   @SuppressWarnings("unchecked")
 	   public List< T > findAll(){
 	      return entityManager.createQuery( "from " + clazz.getName() )

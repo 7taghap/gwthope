@@ -8,6 +8,8 @@ public interface Display {
 //	HasClickHandlers getSaveButton();
 //	HasClickHandlers getCancelButton();
 	void clear();
+	void validate();
+	boolean hasErrors();
 	Widget asWidget();
 
 }

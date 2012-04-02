@@ -1,0 +1,24 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder' 
+			 xmlns:g='urn:import:com.google.gwt.user.client.ui'
+			>
+<g:HTMLPanel>
+		<table width="100%">
+			<tr>
+				<td width="33%" valign="top"><e:AddressEditor ui:field="addressEditor"/></td>
+				<td width="33%" valign="top">
+					<br/>
+					<b>Properties for the class "com.em.validation.sample.model.Address"</b><br/><br/>
+					<g:Tree ui:field="addressProperties"/>
+				</td>
+				<td valign="top">
+					<br/>
+					<b>Properties for the class "com.em.validation.sample.model.Person"</b><br/><br/>
+					<g:Tree ui:field="personProperties"/>
+				</td>
+			</tr>		
+		</table>
+	</g:HTMLPanel>			 
+			 
+</ui:UiBinder> 

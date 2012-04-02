@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+<title>Product</title>
+<layout>2</layout>
+<labels>
+	<label>Product ID</label>
+	<label>Product Desc</label>
+	<label>Unit</label>
+</labels>
+
+<inputs>
+	<input type="text">productId</input>
+	<input type="text">productDesc</input>
+	<input type="list">unit</input>
+</inputs>
+
+<buttons>
+	<button>save</button>
+	<button>cancel</button>
+	<button>add</button>
+</buttons>
+
+<grid>
+	<headers text-format=uppercase>
+		<header>unit</header>
+		<header>qty</header>
+		<header>selling qty</header>
+	</headers>
+</grid>
+</form>

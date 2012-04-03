@@ -3,6 +3,8 @@ package com.rb.gwthope.shared.dto;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.hibernate.annotations.Cascade;
+
 import com.rb.gwthope.server.constants.MyNamedQueries;
 
 import java.util.Date;
@@ -17,7 +19,7 @@ import java.util.Set;
 @Table(name="product")
 @NamedQueries({
 		@NamedQuery(name=MyNamedQueries.PRODUCT_FIND_BY_CATEGORY,
-		query="select o from Product o where LOWER(o.category.categoryName) = LOWER(:"+MyNamedQueries.SEARCH_NAME+")" ),
+		query="select o from Product o where LOWER(o.productCategory.categoryName) = LOWER(:"+MyNamedQueries.SEARCH_NAME+")" ),
 		@NamedQuery(name=MyNamedQueries.PRODUCT_FIND_BY_NAME,
 		query="select o from Product o where o.productName like '%"+MyNamedQueries.SEARCH_NAME+"%'")
 })
@@ -25,11 +27,13 @@ public class Product implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="product_id")
 	private int productId;
 
-	@OneToOne
-	private ProductCategory category;
+	@OneToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="category")
+	private ProductCategory productCategory;
 
 	@Column(name="created_by")
 	private String createdBy;
@@ -62,12 +66,13 @@ public class Product implements Serializable {
 	private Date updateDate;
 
 	//bi-directional many-to-one association to UnitConversion
-    @ManyToOne
-	@JoinColumn(name="unit_type")
+    @OneToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="unit_type")	
 	private UnitConversion unitConversion;
 
 	//bi-directional many-to-one association to ProductDtl
-	@OneToMany(mappedBy="product")
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="product_id")
 	private Set<ProductDtl> productDtls;
 
     public Product() {
@@ -82,11 +87,11 @@ public class Product implements Serializable {
 	}
 
 	public ProductCategory getCategory() {
-		return this.category;
+		return this.productCategory;
 	}
 
 	public void setCategory(ProductCategory category) {
-		this.category = category;
+		this.productCategory = category;
 	}
 
 	public String getCreatedBy() {

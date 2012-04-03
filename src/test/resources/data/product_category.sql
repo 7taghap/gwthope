@@ -28,7 +28,7 @@ CREATE TABLE `product_category` (
   `effective_start_date` datetime DEFAULT NULL,
   `parent_category` int(11) DEFAULT NULL,
   PRIMARY KEY (`product_category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1001 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of product_category

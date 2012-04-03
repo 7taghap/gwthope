@@ -190,7 +190,7 @@ public class ProductActivity extends AbstractActivity {
 	}
 
 	private void fetchDefaultUnits() {
-		productRpc.getDefaultUnits(new AsyncCallback<ArrayList>() {
+		productRpc.getDefaultUnits(new AsyncCallback<ArrayList<UnitConversion>>() {
 
 			@Override
 			public void onFailure(Throwable arg0) {
@@ -214,7 +214,7 @@ public class ProductActivity extends AbstractActivity {
 	}
 	
 	private void fetchCategories() {
-		productRpc.getCategories(new AsyncCallback<ArrayList>() {
+		productRpc.getCategories(new AsyncCallback<ArrayList<ProductCategory>>() {
 
 			@Override
 			public void onFailure(Throwable arg0) {

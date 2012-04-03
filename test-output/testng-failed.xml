@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="true">
     <classes>
-      <class name="com.rb.gwthope.server.ProductCategoryDaoImplTest">
+      <class name="com.rb.gwthope.server.ProductDaoImplTest">
         <methods>
           <include name="unitilsBeforeClass"/>
           <include name="unitilsAfterTestTearDown"/>
           <include name="unitilsBeforeTestSetUp"/>
-          <include name="setUp"/>
-          <include name="findAll"/>
+          <include name="createProduct"/>
         </methods>
-      </class> <!-- com.rb.gwthope.server.ProductCategoryDaoImplTest -->
+      </class> <!-- com.rb.gwthope.server.ProductDaoImplTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

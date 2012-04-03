@@ -8,9 +8,13 @@ import com.rb.gwthope.shared.dto.Product;
 
 public class ProductDaoImpl extends AbstractJpaDao<Integer, Product> implements ProductDao {
 
+	public ProductDaoImpl() {
+		setClazz(Product.class);
+	}
+	
 	@Override
 	public Product findById(int id) {
-		return findById(id);
+		return findOne(id);
 	}
 
 	@Override

@@ -15,8 +15,9 @@ public class ProductDtl implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="product_dtl_id")
-	private String productDtlId;
+	private int productDtlId;
 
 	@Column(name="created_by")
 	private String createdBy;
@@ -43,14 +44,13 @@ public class ProductDtl implements Serializable {
 	@Column(name="selling_qty")
 	private float sellingQty;
 
-	private int status;
+	@OneToOne
+	private Status status;
 
 	@Column(name="sug_price")
 	private double sugPrice;
 
-	//bi-directional many-to-one association to UnitConversion
-    @ManyToOne
-	@JoinColumn(name="package_type")
+	@OneToOne
 	private UnitConversion unitConversion;
 
 	//bi-directional many-to-one association to Product
@@ -61,11 +61,11 @@ public class ProductDtl implements Serializable {
     public ProductDtl() {
     }
 
-	public String getProductDtlId() {
+	public int getProductDtlId() {
 		return this.productDtlId;
 	}
 
-	public void setProductDtlId(String productDtlId) {
+	public void setProductDtlId(int productDtlId) {
 		this.productDtlId = productDtlId;
 	}
 
@@ -133,11 +133,11 @@ public class ProductDtl implements Serializable {
 		this.sellingQty = sellingQty;
 	}
 
-	public int getStatus() {
+	public Status getStatus() {
 		return this.status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 

@@ -5,6 +5,7 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
 import com.google.gwt.place.shared.PlaceController;
+import com.rb.gwthope.client.AppController;
 import com.rb.gwthope.client.view.presenter.AppPlaceFactory;
 
 
@@ -18,5 +19,6 @@ public interface ContactsGinjector extends Ginjector {
 	EventBus getEventBus();
 	
 	AppPlaceFactory getAppPlaceFactory();
+	AppController getAppController();
 	
 }

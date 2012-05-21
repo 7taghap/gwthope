@@ -39,6 +39,7 @@ public class ProductCategoryDaoImplTest extends UnitilsTestNG{
 		 List<ProductCategory> categories = productCategoryDao.getProductCategories();
 //		 Assert.assertEquals(categories, null);
 		 for (ProductCategory category : categories) {
+			 System.out.println(category.toString());
 			 logger.info(category);
 		 }
 	 }

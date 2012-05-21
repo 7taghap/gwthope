@@ -7,18 +7,20 @@ import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
 
 import com.google.inject.Singleton;
+import com.rb.gwthope.client.AppController;
 import com.rb.gwthope.client.activity.ContactActivity.IContactsViewDisplay;
 import com.rb.gwthope.client.activity.EditContactActivity.IEditDisplay;
 import com.rb.gwthope.client.activity.ProductActivity.IProductDetailViewDisplay;
 import com.rb.gwthope.client.activity.ProductActivity.IProductViewDisplay;
 import com.rb.gwthope.client.view.CreateProductView;
+import com.rb.gwthope.client.view.Display;
+import com.rb.gwthope.client.view.LoginWidget;
+
 import com.rb.gwthope.client.view.ProductDetailBox;
-import com.rb.gwthope.client.view.ProductForm;
-import com.rb.gwthope.client.view.ProductView;
-import com.rb.gwthope.client.view.SideMenuView;
+
 import com.rb.gwthope.client.view.presenter.AppActivityMapper;
 import com.rb.gwthope.client.view.presenter.AppPlaceFactory;
-import com.rb.gwthope.client.view.presenter.SimpleGreetingPresenter;
+
 import com.rb.gwthope.client.view.widget.ContactsView;
 import com.rb.gwthope.client.view.widget.EditContactView;
 
@@ -32,6 +34,10 @@ public class ContactsGinModule extends AbstractGinModule {
 		bind(PlaceController.class).to(InjectablePlaceController.class).in(Singleton.class);
 		
 		bind(AppPlaceFactory.class).in(Singleton.class);
+		bind(AppController.class).in(Singleton.class);
+		
+//		bind(IMainActivityView.class).to(MainWidget.class);
+		bind(Display.class).to(LoginWidget.class);
 		
 		// bind the mapper
 		bind(ActivityMapper.class).to(AppActivityMapper.class).in(Singleton.class);

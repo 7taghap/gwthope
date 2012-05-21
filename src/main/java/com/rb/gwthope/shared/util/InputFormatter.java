@@ -1,11 +1,13 @@
 package com.rb.gwthope.shared.util;
 
 /**
- * 
+ * singleton input formatter
+ * for catching some stacktrace
  * @author caburnar
  *
  */
 public class InputFormatter {
+	private static InputFormatter instance;
 
 	public float toFloat(String val) {
 		float fl= 0;
@@ -35,5 +37,16 @@ public class InputFormatter {
 			i = 0;
 		}
 		return i;
+	}
+	
+	/**
+	 * return singleton instance;
+	 * @return
+	 */
+	public static InputFormatter getInstance() {
+		if (instance==null) {
+			instance = new InputFormatter();
+		}
+		return instance;
 	}
 }

@@ -2,36 +2,36 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13470" started-at="2012-04-02T10:23:28Z" finished-at="2012-04-02T10:23:41Z">
+  <suite name="Default suite" duration-ms="10047" started-at="2012-04-05T02:00:06Z" finished-at="2012-04-05T02:00:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13470" started-at="2012-04-02T10:23:28Z" finished-at="2012-04-02T10:23:41Z">
-      <class name="com.rb.gwthope.server.ProductDaoImplTest">
-        <test-method status="PASS" signature="unitilsBeforeClass()[pri:0, instance:com.rb.gwthope.server.ProductDaoImplTest@1313906]" name="unitilsBeforeClass" is-config="true" duration-ms="217" started-at="2012-04-02T10:23:28Z" finished-at="2012-04-02T10:23:28Z">
+    <test name="Default test" duration-ms="10047" started-at="2012-04-05T02:00:06Z" finished-at="2012-04-05T02:00:16Z">
+      <class name="com.rb.gwthope.server.ProductCategoryDaoImplTest">
+        <test-method status="PASS" signature="unitilsBeforeClass()[pri:0, instance:com.rb.gwthope.server.ProductCategoryDaoImplTest@76ab2f]" name="unitilsBeforeClass" is-config="true" duration-ms="151" started-at="2012-04-05T02:00:06Z" finished-at="2012-04-05T02:00:06Z">
         </test-method> <!-- unitilsBeforeClass -->
-        <test-method status="PASS" signature="unitilsBeforeTestSetUp(java.lang.reflect.Method)[pri:0, instance:com.rb.gwthope.server.ProductDaoImplTest@1313906]" name="unitilsBeforeTestSetUp" is-config="true" duration-ms="12926" started-at="2012-04-02T10:23:28Z" finished-at="2012-04-02T10:23:41Z">
+        <test-method status="PASS" signature="unitilsBeforeTestSetUp(java.lang.reflect.Method)[pri:0, instance:com.rb.gwthope.server.ProductCategoryDaoImplTest@76ab2f]" name="unitilsBeforeTestSetUp" is-config="true" duration-ms="9802" started-at="2012-04-05T02:00:06Z" finished-at="2012-04-05T02:00:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.rb.gwthope.server.ProductDaoImplTest.createProduct()]]>
+                <![CDATA[public void com.rb.gwthope.server.ProductCategoryDaoImplTest.findAll()]]>
               </value>
             </param>
           </params>
         </test-method> <!-- unitilsBeforeTestSetUp -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.rb.gwthope.server.ProductDaoImplTest@1313906]" name="setup" is-config="true" duration-ms="3" started-at="2012-04-02T10:23:41Z" finished-at="2012-04-02T10:23:41Z">
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="createProduct()[pri:0, instance:com.rb.gwthope.server.ProductDaoImplTest@1313906]" name="createProduct" duration-ms="66" started-at="2012-04-02T10:23:41Z" finished-at="2012-04-02T10:23:41Z">
-        </test-method> <!-- createProduct -->
-        <test-method status="PASS" signature="unitilsAfterTestTearDown(java.lang.reflect.Method)[pri:0, instance:com.rb.gwthope.server.ProductDaoImplTest@1313906]" name="unitilsAfterTestTearDown" is-config="true" duration-ms="244" started-at="2012-04-02T10:23:41Z" finished-at="2012-04-02T10:23:41Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rb.gwthope.server.ProductCategoryDaoImplTest@76ab2f]" name="setUp" is-config="true" duration-ms="5" started-at="2012-04-05T02:00:16Z" finished-at="2012-04-05T02:00:16Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="findAll()[pri:0, instance:com.rb.gwthope.server.ProductCategoryDaoImplTest@76ab2f]" name="findAll" duration-ms="68" started-at="2012-04-05T02:00:16Z" finished-at="2012-04-05T02:00:16Z">
+        </test-method> <!-- findAll -->
+        <test-method status="PASS" signature="unitilsAfterTestTearDown(java.lang.reflect.Method)[pri:0, instance:com.rb.gwthope.server.ProductCategoryDaoImplTest@76ab2f]" name="unitilsAfterTestTearDown" is-config="true" duration-ms="11" started-at="2012-04-05T02:00:16Z" finished-at="2012-04-05T02:00:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.rb.gwthope.server.ProductDaoImplTest.createProduct()]]>
+                <![CDATA[public void com.rb.gwthope.server.ProductCategoryDaoImplTest.findAll()]]>
               </value>
             </param>
           </params>
         </test-method> <!-- unitilsAfterTestTearDown -->
-      </class> <!-- com.rb.gwthope.server.ProductDaoImplTest -->
+      </class> <!-- com.rb.gwthope.server.ProductCategoryDaoImplTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

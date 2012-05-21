@@ -69,11 +69,14 @@ public class SideMenuView extends Composite{
 		    Anchor achor1 = new Anchor("Product");
 		    HorizontalPanel panel1 = new HorizontalPanel();
 		    panel1.add(achor1);
-		    homePanel.add(createMailItem());
+//		    homePanel.add(createMailItem());
 //		    homePanel.add(new Label("Create"));
 		    productPanel.add(this.createFiltersItem());
+		    VerticalPanel loginPanel = new VerticalPanel();
+//		    loginPanel.add(new LoginWidget());
+//		    homePanel.add(loginPanel);
 		    homePanel.add(hypProduct);
-		    stackPanel.add(homePanel,getHeaderString(hypHome),true);
+		    stackPanel.add(homePanel,"Home",true);
 		    stackPanel.add(productPanel,"Product",true);
 		    return stackPanel;
 	}
@@ -91,7 +94,7 @@ public HasClickHandlers getProductButton() {
 private VerticalPanel createFiltersItem() {
     VerticalPanel filtersPanel = new VerticalPanel();
     filtersPanel.setSpacing(4);
-    String[] links = {"create","update","delete"};
+    String[] links = {"product","update","delete"};
     for (int x=0; x < links.length; x++ ){
 //    	Hyperlink link = 
     	filtersPanel.add(new Hyperlink(links[x],"prod"+links[x]));

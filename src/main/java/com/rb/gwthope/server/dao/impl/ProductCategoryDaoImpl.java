@@ -3,10 +3,13 @@ package com.rb.gwthope.server.dao.impl;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import com.rb.gwthope.server.dao.ProductCategoryDao;
 import com.rb.gwthope.shared.dto.ProductCategory;
+import com.rb.gwthope.shared.exceptions.ProductCategoryException;
 
+@Repository
 public class ProductCategoryDaoImpl extends AbstractJpaDao<Integer, ProductCategory> 
 implements ProductCategoryDao{
 
@@ -22,7 +25,7 @@ implements ProductCategoryDao{
 	}
 
 	@Override
-	public List<ProductCategory> getProductCategories() {
+	public List<ProductCategory> getProductCategories(){
 		return findAll();
 	}
 

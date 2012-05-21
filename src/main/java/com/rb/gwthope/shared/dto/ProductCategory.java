@@ -97,4 +97,14 @@ public class ProductCategory implements Serializable {
 		this.parentCategory = parentCategory;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductCategory [productCategoryId=" + productCategoryId
+				+ ", categoryName=" + categoryName + ", categoryType="
+				+ categoryType + ", description=" + description
+				+ ", effectiveEndDate=" + effectiveEndDate
+				+ ", effectiveStartDate=" + effectiveStartDate
+				+ ", parentCategory=" + parentCategory + "]";
+	}
+
 }

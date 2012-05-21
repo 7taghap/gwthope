@@ -1,7 +1,9 @@
 package com.rb.gwthope.client.activity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import org.springframework.scheduling.annotation.AsyncAnnotationAdvisor;
 
 import com.google.gwt.activity.shared.AbstractActivity;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -19,12 +21,15 @@ import com.google.inject.Inject;
 import com.rb.gwthope.client.event.ProductEvent;
 import com.rb.gwthope.client.event.ProductEventHandler;
 import com.rb.gwthope.client.place.ProductPlace;
+import com.rb.gwthope.client.view.DenialPopup;
 import com.rb.gwthope.client.view.Display;
 import com.rb.gwthope.shared.dto.Product;
 import com.rb.gwthope.shared.dto.ProductCategory;
 import com.rb.gwthope.shared.dto.ProductDtl;
 import com.rb.gwthope.shared.dto.UnitConversion;
+import com.rb.gwthope.shared.services.AuthServiceAsync;
 import com.rb.gwthope.shared.services.ProductServiceAsync;
+
 
 public class ProductActivity extends AbstractActivity {
 
@@ -41,6 +46,7 @@ public class ProductActivity extends AbstractActivity {
 		void setDefaultUnit(List<String> defaultUnits);
 		void setCategoryList(List<ProductCategory> productCategories);
 		Product getProduct();
+		void setContent(String content);
 		
 	}
 	
@@ -61,22 +67,27 @@ public class ProductActivity extends AbstractActivity {
 	private final EventBus eventBus;
 	private ProductServiceAsync productRpc;
 	private IProductDetailViewDisplay popup;
+	private AuthServiceAsync authService;
 	
 	 Product product; 
 	 List<ProductDtl> dtlsForSubmit;
 	 List<String> selectedRows;
 	 int selectedRow =-1;
+	 boolean inSession = false;
+	 String loginPage = "";
 
 	@Inject
 	public ProductActivity(PlaceController placeController,
 			IProductViewDisplay display, EventBus eventBus,
-			ProductServiceAsync rpc,IProductDetailViewDisplay popup) {
+			ProductServiceAsync rpc,IProductDetailViewDisplay popup,
+			AuthServiceAsync authService) {
 		super();
 		this.placeController = placeController;
 		this.display = display;
 		this.eventBus = eventBus;
 		this.productRpc = rpc;
 		this.popup = popup;
+		this.authService = authService;
 		dtlsForSubmit = new ArrayList<ProductDtl>();
 	}
 
@@ -86,10 +97,17 @@ public class ProductActivity extends AbstractActivity {
 
 	@Override
 	public void start(AcceptsOneWidget container, EventBus arg1) {
-		// TODO Auto-generated method stub
-		bind();
-		container.setWidget(this.display.asWidget());
-		fetchDefaultUnits();
+		checkSession();
+		if(inSession) {
+			bind();
+			container.setWidget(this.display.asWidget());
+			fetchDefaultUnits();
+			fetchCategories();
+		}
+		else {
+			this.display.setContent(loginPage);
+			container.setWidget(this.display.asWidget());
+		}
 		
 	}
 	
@@ -188,7 +206,10 @@ public class ProductActivity extends AbstractActivity {
 			}
 		});
 	}
-
+	
+	/**
+	 * fetch the default units 
+	 */
 	private void fetchDefaultUnits() {
 		productRpc.getDefaultUnits(new AsyncCallback<ArrayList<UnitConversion>>() {
 
@@ -213,18 +234,22 @@ public class ProductActivity extends AbstractActivity {
 		
 	}
 	
+	
+	/**
+	 * fetch all categories
+	 */
 	private void fetchCategories() {
 		productRpc.getCategories(new AsyncCallback<ArrayList<ProductCategory>>() {
 
 			@Override
 			public void onFailure(Throwable arg0) {
 				Window.alert(arg0.getMessage());
-				
+				DenialPopup popup = new DenialPopup(arg0.getMessage());
+				popup.show();
 			}
 
 			@Override
 			public void onSuccess(ArrayList arg0) {
-				// TODO Auto-generated method stub
 				display.setCategoryList(arg0);
 			}
 		});
@@ -232,8 +257,9 @@ public class ProductActivity extends AbstractActivity {
 	
 	//save product 
 	private void saveProduct() {
-		product = new Product();
-//		product.
+		product = display.getProduct();
+		
+		product.setProductDtls(new HashSet<ProductDtl>(dtlsForSubmit));
 		
 		productRpc.saveProduct(product, new AsyncCallback<Product>() {
 
@@ -246,9 +272,31 @@ public class ProductActivity extends AbstractActivity {
 			@Override
 			public void onSuccess(Product arg0) {
 				product = arg0;
+//				Window.alert(product.getProductId()+"");
 				
 			}
 		});
+	}
+	
+	private void checkSession() {
+		
+		authService.retrieveUsername(new AsyncCallback<String>() {
+
+			@Override
+			public void onFailure(Throwable arg0) {
+				// TODO Auto-generated method stub
+				Window.alert(arg0.getMessage());
+				loginPage = arg0.getMessage();
+			}
+
+			@Override
+			public void onSuccess(String arg0) {
+				// TODO Auto-generated method stub
+				Window.alert(arg0);
+				inSession = true;
+			}
+		});
+		
 	}
 	
 }

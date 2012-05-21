@@ -1,9 +1,12 @@
 package com.rb.gwthope.client.view.presenter;
 
+
 import com.google.inject.Inject;
 import com.google.inject.Provider;
+import com.rb.gwthope.client.AppController;
 import com.rb.gwthope.client.place.ContactPlace;
 import com.rb.gwthope.client.place.EditContactPlace;
+import com.rb.gwthope.client.place.MainPlace;
 import com.rb.gwthope.client.place.NewContactPlace;
 import com.rb.gwthope.client.place.ProductPlace;
 
@@ -29,6 +32,11 @@ public class AppPlaceFactory {
 	ProductPlace.Tokenizer productPlaceTokenizer;
 //	MenuPlace.Tokenizer menuPlaceTokenizer;
 	
+//	@Inject
+//	MainPlace.Tokenizer mainPlaceTokinizer;
+//	@Inject
+//	Provider<MainPlace> mainProvider;
+	
 	@Inject
 	Provider<ContactPlace> contactProvider;
 	@Inject
@@ -39,8 +47,7 @@ public class AppPlaceFactory {
 	@Inject
 	Provider<ProductPlace> productPlace;
 	
-
-
+	
 	// contact place
 	public ContactPlace.Tokenizer getContactPlaceTokenizer() {
 		return contactPlaceTokenizer;
@@ -88,5 +95,23 @@ public class AppPlaceFactory {
 	}
 
 	
+	
+
+//	public MainPlace.Tokenizer getMainPlaceTokinizer() {
+//		return mainPlaceTokinizer;
+//	}
+//
+//	public void setMainPlaceTokinizer(MainPlace.Tokenizer mainPlaceTokinizer) {
+//		this.mainPlaceTokinizer = mainPlaceTokinizer;
+//	}
+//
+//	public MainPlace getMainProvider() {
+//		return mainProvider.get();
+//	}
+//
+//	public void setMainProvider(Provider<MainPlace> mainProvider) {
+//		this.mainProvider = mainProvider;
+//	}
+//	
 	
 }

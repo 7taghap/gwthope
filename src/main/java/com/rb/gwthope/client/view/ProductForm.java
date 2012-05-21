@@ -159,4 +159,10 @@ public class ProductForm extends Composite implements IProductViewDisplay{
 		return null;
 	}
 
+	@Override
+	public void setContent(String content) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

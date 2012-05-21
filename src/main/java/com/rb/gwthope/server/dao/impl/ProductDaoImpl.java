@@ -2,10 +2,15 @@ package com.rb.gwthope.server.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.rb.gwthope.server.constants.MyNamedQueries;
 import com.rb.gwthope.server.dao.ProductDao;
 import com.rb.gwthope.shared.dto.Product;
+import com.rb.gwthope.shared.exceptions.ProductCategoryException;
+import com.rb.gwthope.shared.exceptions.ProductNotSaveException;
 
+@Repository
 public class ProductDaoImpl extends AbstractJpaDao<Integer, Product> implements ProductDao {
 
 	public ProductDaoImpl() {
@@ -18,12 +23,16 @@ public class ProductDaoImpl extends AbstractJpaDao<Integer, Product> implements 
 	}
 
 	@Override
-	public Product saveProduct(Product product) {
-		if(product.getProductId() > 0) {
-			update(product);
-		}
-		else {
-			save(product);
+	public Product saveProduct(Product product) throws ProductNotSaveException{
+		try{
+			if(product.getProductId() > 0) {
+				update(product);
+			}
+			else {
+				save(product);
+			}
+		}catch(Exception e) {
+			throw new ProductNotSaveException("failed to save product");
 		}
 
 		return product;

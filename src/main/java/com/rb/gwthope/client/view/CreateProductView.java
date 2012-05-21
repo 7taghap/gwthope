@@ -1,6 +1,7 @@
 package com.rb.gwthope.client.view;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.transaction.config.TxNamespaceHandler;
@@ -13,6 +14,7 @@ import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.FileUpload;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.FlexTable.FlexCellFormatter;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -56,7 +58,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 	private final Button addDetailButton;
 	private final Button deleteDetailButton;
 	private final List<String> detailHeader;
-	
+	VerticalPanel contentDetailsPanel = new VerticalPanel();
 	Product product;
 	boolean hasErrors;
 
@@ -65,7 +67,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		// contentDetailsDecorator.setWidth("18em");
 		initWidget(contentDetailsDecorator);
 
-		VerticalPanel contentDetailsPanel = new VerticalPanel();
+		
 		contentDetailsPanel.setWidth("100%");
 		//initialize Labels
 		lblProductId =new Label("Product ID");
@@ -243,7 +245,7 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 
 	@Override
 	public Product getProduct() {
-		InputFormatter formatter = new InputFormatter();
+		InputFormatter formatter = InputFormatter.getInstance();
 		Product product = new Product();
 		ProductCategory category = new ProductCategory();
 		category.setProductCategoryId(formatter.toInt(lstCategory.getValue(lstCategory.getSelectedIndex())));
@@ -253,7 +255,10 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		product.setProductName(productName.getText());
 		product.setShelf(shelf.getText());
 		product.setTotalQtyOnHand(formatter.toFloat(totalQtyOnHand.getText()));
-//		product.set
+		UnitConversion unit = new UnitConversion(); //query if dili slow
+		unit.setId(formatter.toInt(defaultUnitType.getValue(defaultUnitType.getSelectedIndex())));
+		unit.setName(defaultUnitType.getItemText(defaultUnitType.getSelectedIndex()));
+		product.setUnitConversion(unit);
 		return product;
 	}
 
@@ -262,6 +267,13 @@ public class CreateProductView extends Composite implements IProductViewDisplay 
 		for(ProductCategory category : productCategories) {
 			lstCategory.addItem(category.getCategoryName(), category.getProductCategoryId()+"");
 		}
+		
+	}
+
+	@Override
+	public void setContent(String content) {
+		contentDetailsPanel.clear();
+		contentDetailsPanel.add(new HTML(content));
 		
 	}
 	
